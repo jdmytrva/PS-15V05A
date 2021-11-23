@@ -1348,11 +1348,11 @@ void MenuCalibration_CURRENT_Out(Key_Pressed_t key)
 {
 	EnterInMenu_Status=1;
 	OUT_ON();
-	if (key == KEY_NEXT) CalibrationData.CalibrationValueForCurrent++;
-	if (key == KEY_BACK) CalibrationData.CalibrationValueForCurrent--;
+	if (key == KEY_NEXT) CalibrationData.CalibrationValueForCurrent_x50++;
+	if (key == KEY_BACK) CalibrationData.CalibrationValueForCurrent_x50--;
 
 	lcd_set_xy(0,0);
-	PrintToLCD(itoa(CalibrationData.CalibrationValueForCurrent));
+	PrintToLCD(itoa(CalibrationData.CalibrationValueForCurrent_x50));
 	PrintToLCD("   ");
 	lcd_set_xy(0,1);
 	PrintToLCD(itoa(Current));
@@ -1362,11 +1362,11 @@ void MenuCalibration_CURRENT_Load(Key_Pressed_t key)
 {
 	EnterInMenu_Status=1;
 	discharge();
-	if (key == KEY_NEXT) CalibrationData.CalibrationValueForCurrent1++;
-	if (key == KEY_BACK) CalibrationData.CalibrationValueForCurrent1--;
+	if (key == KEY_NEXT) CalibrationData.CalibrationValueForCurrent_x1++;
+	if (key == KEY_BACK) CalibrationData.CalibrationValueForCurrent_x1--;
 
 	lcd_set_xy(0,0);
-	PrintToLCD(itoa(CalibrationData.CalibrationValueForCurrent1));
+	PrintToLCD(itoa(CalibrationData.CalibrationValueForCurrent_x1));
 	PrintToLCD("   ");
 	lcd_set_xy(0,1);
 	PrintToLCD(itoa(Current));
@@ -1390,11 +1390,11 @@ void MenuCalibration_VoltageOut(Key_Pressed_t key)
 {
 	EnterInMenu_Status=1;
 	OUT_ON();
-	if (key == KEY_NEXT) CalibrationData.CalibrationValueForVoltage1++;
-	if (key == KEY_BACK) CalibrationData.CalibrationValueForVoltage1--;
+	if (key == KEY_NEXT) CalibrationData.CalibrationValueForU_OUT++;
+	if (key == KEY_BACK) CalibrationData.CalibrationValueForU_OUT--;
 
 	lcd_set_xy(0,0);
-	PrintToLCD(itoa(CalibrationData.CalibrationValueForVoltage1));
+	PrintToLCD(itoa(CalibrationData.CalibrationValueForU_OUT));
 	PrintToLCD("   ");
 	lcd_set_xy(0,1);
 	PrintToLCD(itoa_koma(U_OUT,2));
@@ -1404,11 +1404,11 @@ void MenuCalibration_VoltageIn(Key_Pressed_t key)
 {
 	EnterInMenu_Status=1;
 	OUT_ON();
-	if (key == KEY_NEXT) CalibrationData.CalibrationValueForVoltage2++;
-	if (key == KEY_BACK) CalibrationData.CalibrationValueForVoltage2--;
+	if (key == KEY_NEXT) CalibrationData.CalibrationValueForU_IN++;
+	if (key == KEY_BACK) CalibrationData.CalibrationValueForU_IN--;
 
 	lcd_set_xy(0,0);
-	PrintToLCD(itoa(CalibrationData.CalibrationValueForVoltage2));
+	PrintToLCD(itoa(CalibrationData.CalibrationValueForU_IN));
 	PrintToLCD("   ");
 	lcd_set_xy(0,1);
 	PrintToLCD(itoa_koma(U_IN,2));
@@ -2154,11 +2154,11 @@ void adc_func()
 		if (U_PS < 3) U_PS = 0;
 	}
 
-	Ut = (RegularConvData[1] * CalibrationData.CalibrationValueForVoltage2) / RegularConvData[7];
+	Ut = (RegularConvData[1] * CalibrationData.CalibrationValueForU_IN) / RegularConvData[7];
 	U_IN = middle_of_3Umax3(Ut);
 
 
-	It = (RegularConvData[0] * CalibrationData.CalibrationValueForCurrent*10) / RegularConvData[7] ;//  Current A/10
+	It = (RegularConvData[0] * CalibrationData.CalibrationValueForCurrent_x50*10) / RegularConvData[7] ;//  Current A/10
 	It_m = middle_of_3Imax1(It);
 	SumI1 =SumI1 + RunningAverageI1(It_m);
 	SumI1Counter ++;
@@ -2169,7 +2169,7 @@ void adc_func()
 		SumI1 = 0;
 	}
 
-	It= (RegularConvData[3] * CalibrationData.CalibrationValueForCurrent1*10) / RegularConvData[7] ;//  Current A/10
+	It= (RegularConvData[3] * CalibrationData.CalibrationValueForCurrent_x1*10) / RegularConvData[7] ;//  Current A/10
 	It_m = middle_of_3Imax2(It);
 	SumI2 =SumI2 + RunningAverageI2(It_m);
 	SumI2Counter ++;
@@ -2182,7 +2182,7 @@ void adc_func()
 	Current = (Current_x50-CalibrationData.Calibration0ValueForCurrent)/1 ;//2745;
 
 
-	Ut = (RegularConvData[2] * CalibrationData.CalibrationValueForVoltage1) / RegularConvData[7];
+	Ut = (RegularConvData[2] * CalibrationData.CalibrationValueForU_OUT) / RegularConvData[7];
 	Ut_m = middle_of_3Umax2(Ut);
 	SumU2 = SumU2 + RunningAverageU2(Ut_m);
 	SumU2Counter ++;

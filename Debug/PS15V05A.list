@@ -39,13 +39,13 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  17 .debug_macro  0000c3b4  00000000  00000000  0003b090  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_line   0000b728  00000000  00000000  00047444  2**0
+ 18 .debug_line   0000b730  00000000  00000000  00047444  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    00044287  00000000  00000000  00052b6c  2**0
+ 19 .debug_str    00044264  00000000  00000000  00052b74  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .comment      00000053  00000000  00000000  00096df3  2**0
+ 20 .comment      00000053  00000000  00000000  00096dd8  2**0
                   CONTENTS, READONLY
- 21 .debug_frame  0000162c  00000000  00000000  00096e48  2**2
+ 21 .debug_frame  0000162c  00000000  00000000  00096e2c  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -415,19 +415,19 @@ uint8_t CalibrationWriteToFlash(void)
 	flash_write( CalibrationData.Calibration0ValueForCurrent1_AddresInEEprom, CalibrationData.Calibration0ValueForCurrent1);
  80003ca:	e9d4 1004 	ldrd	r1, r0, [r4, #16]
  80003ce:	f7ff ff53 	bl	8000278 <flash_write>
-	flash_write( CalibrationData.CalibrationValueForCurrent_AddresInEEprom, CalibrationData.CalibrationValueForCurrent);
+	flash_write( CalibrationData.CalibrationValueForCurrent_AddresInEEprom, CalibrationData.CalibrationValueForCurrent_x50);
  80003d2:	e9d4 1006 	ldrd	r1, r0, [r4, #24]
  80003d6:	f7ff ff4f 	bl	8000278 <flash_write>
-	flash_write( CalibrationData.CalibrationValueForCurrent1_AddresInEEprom, CalibrationData.CalibrationValueForCurrent1);
+	flash_write( CalibrationData.CalibrationValueForCurrent1_AddresInEEprom, CalibrationData.CalibrationValueForCurrent_x1);
  80003da:	e9d4 1008 	ldrd	r1, r0, [r4, #32]
  80003de:	f7ff ff4b 	bl	8000278 <flash_write>
 	flash_write( CalibrationData.CalibrationValueForVoltage_AddresInEEprom, CalibrationData.CalibrationValueForVoltage);
  80003e2:	e9d4 100a 	ldrd	r1, r0, [r4, #40]	; 0x28
  80003e6:	f7ff ff47 	bl	8000278 <flash_write>
-	flash_write( CalibrationData.CalibrationValueForVoltage1_AddresInEEprom, CalibrationData.CalibrationValueForVoltage1);
+	flash_write( CalibrationData.CalibrationValueForVoltage1_AddresInEEprom, CalibrationData.CalibrationValueForU_OUT);
  80003ea:	e9d4 100c 	ldrd	r1, r0, [r4, #48]	; 0x30
  80003ee:	f7ff ff43 	bl	8000278 <flash_write>
-	flash_write( CalibrationData.CalibrationValueForVoltage2_AddresInEEprom, CalibrationData.CalibrationValueForVoltage2);
+	flash_write( CalibrationData.CalibrationValueForVoltage2_AddresInEEprom, CalibrationData.CalibrationValueForU_IN);
  80003f2:	e9d4 100e 	ldrd	r1, r0, [r4, #56]	; 0x38
  80003f6:	f7ff ff3f 	bl	8000278 <flash_write>
 	flash_write( CalibrationData.ResistanceComp_Ishunt_Wires_AddresInEEprom, CalibrationData.ResistanceComp_Ishunt_Wires);
@@ -465,19 +465,19 @@ uint8_t CalibrationFactoryWriteToFlash(void)
 	flash_write( CalibrationDataFactory.Calibration0ValueForCurrent1_AddresInEEprom, CalibrationDataFactory.Calibration0ValueForCurrent1);
  800043e:	e9d4 1004 	ldrd	r1, r0, [r4, #16]
  8000442:	f7ff ff19 	bl	8000278 <flash_write>
-	flash_write( CalibrationDataFactory.CalibrationValueForCurrent_AddresInEEprom, CalibrationDataFactory.CalibrationValueForCurrent);
+	flash_write( CalibrationDataFactory.CalibrationValueForCurrent_AddresInEEprom, CalibrationDataFactory.CalibrationValueForCurrent_x50);
  8000446:	e9d4 1006 	ldrd	r1, r0, [r4, #24]
  800044a:	f7ff ff15 	bl	8000278 <flash_write>
-	flash_write( CalibrationDataFactory.CalibrationValueForCurrent1_AddresInEEprom, CalibrationDataFactory.CalibrationValueForCurrent1);
+	flash_write( CalibrationDataFactory.CalibrationValueForCurrent1_AddresInEEprom, CalibrationDataFactory.CalibrationValueForCurrent_x1);
  800044e:	e9d4 1008 	ldrd	r1, r0, [r4, #32]
  8000452:	f7ff ff11 	bl	8000278 <flash_write>
 	flash_write( CalibrationDataFactory.CalibrationValueForVoltage_AddresInEEprom, CalibrationDataFactory.CalibrationValueForVoltage);
  8000456:	e9d4 100a 	ldrd	r1, r0, [r4, #40]	; 0x28
  800045a:	f7ff ff0d 	bl	8000278 <flash_write>
-	flash_write( CalibrationDataFactory.CalibrationValueForVoltage1_AddresInEEprom, CalibrationDataFactory.CalibrationValueForVoltage1);
+	flash_write( CalibrationDataFactory.CalibrationValueForVoltage1_AddresInEEprom, CalibrationDataFactory.CalibrationValueForU_OUT);
  800045e:	e9d4 100c 	ldrd	r1, r0, [r4, #48]	; 0x30
  8000462:	f7ff ff09 	bl	8000278 <flash_write>
-	flash_write( CalibrationDataFactory.CalibrationValueForVoltage2_AddresInEEprom, CalibrationDataFactory.CalibrationValueForVoltage2);
+	flash_write( CalibrationDataFactory.CalibrationValueForVoltage2_AddresInEEprom, CalibrationDataFactory.CalibrationValueForU_IN);
  8000466:	e9d4 100e 	ldrd	r1, r0, [r4, #56]	; 0x38
  800046a:	f7ff ff05 	bl	8000278 <flash_write>
 	flash_write( CalibrationDataFactory.ResistanceComp_Ishunt_Wires_AddresInEEprom, CalibrationDataFactory.ResistanceComp_Ishunt_Wires);
@@ -523,50 +523,50 @@ uint8_t CalibrationReadFromFlash(void)
  80004bc:	2100      	movs	r1, #0
  80004be:	6960      	ldr	r0, [r4, #20]
  80004c0:	f7ff ff44 	bl	800034c <flash_read>
-	CalibrationData.CalibrationValueForCurrent = flash_read(CalibrationData.CalibrationValueForCurrent_AddresInEEprom,10,100000);
+	CalibrationData.CalibrationValueForCurrent_x50 = flash_read(CalibrationData.CalibrationValueForCurrent_AddresInEEprom,10,100000);
  80004c4:	4d1b      	ldr	r5, [pc, #108]	; (8000534 <CalibrationReadFromFlash+0x9c>)
 	CalibrationData.Calibration0ValueForCurrent1 = flash_read(CalibrationData.Calibration0ValueForCurrent1_AddresInEEprom,0,1000);
  80004c6:	6120      	str	r0, [r4, #16]
-	CalibrationData.CalibrationValueForCurrent = flash_read(CalibrationData.CalibrationValueForCurrent_AddresInEEprom,10,100000);
+	CalibrationData.CalibrationValueForCurrent_x50 = flash_read(CalibrationData.CalibrationValueForCurrent_AddresInEEprom,10,100000);
  80004c8:	462a      	mov	r2, r5
  80004ca:	210a      	movs	r1, #10
  80004cc:	69e0      	ldr	r0, [r4, #28]
  80004ce:	f7ff ff3d 	bl	800034c <flash_read>
-	CalibrationData.CalibrationValueForCurrent1 = flash_read(CalibrationData.CalibrationValueForCurrent1_AddresInEEprom,10,100000);
+	CalibrationData.CalibrationValueForCurrent_x1 = flash_read(CalibrationData.CalibrationValueForCurrent1_AddresInEEprom,10,100000);
  80004d2:	462a      	mov	r2, r5
-	CalibrationData.CalibrationValueForCurrent = flash_read(CalibrationData.CalibrationValueForCurrent_AddresInEEprom,10,100000);
+	CalibrationData.CalibrationValueForCurrent_x50 = flash_read(CalibrationData.CalibrationValueForCurrent_AddresInEEprom,10,100000);
  80004d4:	61a0      	str	r0, [r4, #24]
-	CalibrationData.CalibrationValueForCurrent1 = flash_read(CalibrationData.CalibrationValueForCurrent1_AddresInEEprom,10,100000);
+	CalibrationData.CalibrationValueForCurrent_x1 = flash_read(CalibrationData.CalibrationValueForCurrent1_AddresInEEprom,10,100000);
  80004d6:	210a      	movs	r1, #10
  80004d8:	6a60      	ldr	r0, [r4, #36]	; 0x24
  80004da:	f7ff ff37 	bl	800034c <flash_read>
 	CalibrationData.CalibrationValueForVoltage = flash_read(CalibrationData.CalibrationValueForVoltage_AddresInEEprom,10,100000);
  80004de:	462a      	mov	r2, r5
-	CalibrationData.CalibrationValueForCurrent1 = flash_read(CalibrationData.CalibrationValueForCurrent1_AddresInEEprom,10,100000);
+	CalibrationData.CalibrationValueForCurrent_x1 = flash_read(CalibrationData.CalibrationValueForCurrent1_AddresInEEprom,10,100000);
  80004e0:	6220      	str	r0, [r4, #32]
 	CalibrationData.CalibrationValueForVoltage = flash_read(CalibrationData.CalibrationValueForVoltage_AddresInEEprom,10,100000);
  80004e2:	210a      	movs	r1, #10
  80004e4:	6ae0      	ldr	r0, [r4, #44]	; 0x2c
  80004e6:	f7ff ff31 	bl	800034c <flash_read>
-	CalibrationData.CalibrationValueForVoltage1 = flash_read(CalibrationData.CalibrationValueForVoltage1_AddresInEEprom,10,100000);
+	CalibrationData.CalibrationValueForU_OUT = flash_read(CalibrationData.CalibrationValueForVoltage1_AddresInEEprom,10,100000);
  80004ea:	462a      	mov	r2, r5
 	CalibrationData.CalibrationValueForVoltage = flash_read(CalibrationData.CalibrationValueForVoltage_AddresInEEprom,10,100000);
  80004ec:	62a0      	str	r0, [r4, #40]	; 0x28
-	CalibrationData.CalibrationValueForVoltage1 = flash_read(CalibrationData.CalibrationValueForVoltage1_AddresInEEprom,10,100000);
+	CalibrationData.CalibrationValueForU_OUT = flash_read(CalibrationData.CalibrationValueForVoltage1_AddresInEEprom,10,100000);
  80004ee:	210a      	movs	r1, #10
  80004f0:	6b60      	ldr	r0, [r4, #52]	; 0x34
  80004f2:	f7ff ff2b 	bl	800034c <flash_read>
-	CalibrationData.CalibrationValueForVoltage2 = flash_read(CalibrationData.CalibrationValueForVoltage2_AddresInEEprom,10,100000);
+	CalibrationData.CalibrationValueForU_IN = flash_read(CalibrationData.CalibrationValueForVoltage2_AddresInEEprom,10,100000);
  80004f6:	462a      	mov	r2, r5
-	CalibrationData.CalibrationValueForVoltage1 = flash_read(CalibrationData.CalibrationValueForVoltage1_AddresInEEprom,10,100000);
+	CalibrationData.CalibrationValueForU_OUT = flash_read(CalibrationData.CalibrationValueForVoltage1_AddresInEEprom,10,100000);
  80004f8:	6320      	str	r0, [r4, #48]	; 0x30
-	CalibrationData.CalibrationValueForVoltage2 = flash_read(CalibrationData.CalibrationValueForVoltage2_AddresInEEprom,10,100000);
+	CalibrationData.CalibrationValueForU_IN = flash_read(CalibrationData.CalibrationValueForVoltage2_AddresInEEprom,10,100000);
  80004fa:	210a      	movs	r1, #10
  80004fc:	6be0      	ldr	r0, [r4, #60]	; 0x3c
  80004fe:	f7ff ff25 	bl	800034c <flash_read>
 	CalibrationData.ResistanceComp_Ishunt_Wires = flash_read(CalibrationData.ResistanceComp_Ishunt_Wires_AddresInEEprom,70,300);
  8000502:	f44f 7296 	mov.w	r2, #300	; 0x12c
-	CalibrationData.CalibrationValueForVoltage2 = flash_read(CalibrationData.CalibrationValueForVoltage2_AddresInEEprom,10,100000);
+	CalibrationData.CalibrationValueForU_IN = flash_read(CalibrationData.CalibrationValueForVoltage2_AddresInEEprom,10,100000);
  8000506:	63a0      	str	r0, [r4, #56]	; 0x38
 	CalibrationData.ResistanceComp_Ishunt_Wires = flash_read(CalibrationData.ResistanceComp_Ishunt_Wires_AddresInEEprom,70,300);
  8000508:	2146      	movs	r1, #70	; 0x46
@@ -620,50 +620,50 @@ uint8_t CalibrationReadFromFlashForVerify(void)
  8000564:	2100      	movs	r1, #0
  8000566:	6960      	ldr	r0, [r4, #20]
  8000568:	f7ff fef0 	bl	800034c <flash_read>
-	CalibrationDataForVerify.CalibrationValueForCurrent = flash_read(CalibrationDataForVerify.CalibrationValueForCurrent_AddresInEEprom,10,100000);
+	CalibrationDataForVerify.CalibrationValueForCurrent_x50 = flash_read(CalibrationDataForVerify.CalibrationValueForCurrent_AddresInEEprom,10,100000);
  800056c:	4d1b      	ldr	r5, [pc, #108]	; (80005dc <CalibrationReadFromFlashForVerify+0x9c>)
 	CalibrationDataForVerify.Calibration0ValueForCurrent1 = flash_read(CalibrationDataForVerify.Calibration0ValueForCurrent1_AddresInEEprom,0,1000);
  800056e:	6120      	str	r0, [r4, #16]
-	CalibrationDataForVerify.CalibrationValueForCurrent = flash_read(CalibrationDataForVerify.CalibrationValueForCurrent_AddresInEEprom,10,100000);
+	CalibrationDataForVerify.CalibrationValueForCurrent_x50 = flash_read(CalibrationDataForVerify.CalibrationValueForCurrent_AddresInEEprom,10,100000);
  8000570:	462a      	mov	r2, r5
  8000572:	210a      	movs	r1, #10
  8000574:	69e0      	ldr	r0, [r4, #28]
  8000576:	f7ff fee9 	bl	800034c <flash_read>
-	CalibrationDataForVerify.CalibrationValueForCurrent1 = flash_read(CalibrationDataForVerify.CalibrationValueForCurrent1_AddresInEEprom,10,100000);
+	CalibrationDataForVerify.CalibrationValueForCurrent_x1 = flash_read(CalibrationDataForVerify.CalibrationValueForCurrent1_AddresInEEprom,10,100000);
  800057a:	462a      	mov	r2, r5
-	CalibrationDataForVerify.CalibrationValueForCurrent = flash_read(CalibrationDataForVerify.CalibrationValueForCurrent_AddresInEEprom,10,100000);
+	CalibrationDataForVerify.CalibrationValueForCurrent_x50 = flash_read(CalibrationDataForVerify.CalibrationValueForCurrent_AddresInEEprom,10,100000);
  800057c:	61a0      	str	r0, [r4, #24]
-	CalibrationDataForVerify.CalibrationValueForCurrent1 = flash_read(CalibrationDataForVerify.CalibrationValueForCurrent1_AddresInEEprom,10,100000);
+	CalibrationDataForVerify.CalibrationValueForCurrent_x1 = flash_read(CalibrationDataForVerify.CalibrationValueForCurrent1_AddresInEEprom,10,100000);
  800057e:	210a      	movs	r1, #10
  8000580:	6a60      	ldr	r0, [r4, #36]	; 0x24
  8000582:	f7ff fee3 	bl	800034c <flash_read>
 	CalibrationDataForVerify.CalibrationValueForVoltage = flash_read(CalibrationDataForVerify.CalibrationValueForVoltage_AddresInEEprom,10,100000);
  8000586:	462a      	mov	r2, r5
-	CalibrationDataForVerify.CalibrationValueForCurrent1 = flash_read(CalibrationDataForVerify.CalibrationValueForCurrent1_AddresInEEprom,10,100000);
+	CalibrationDataForVerify.CalibrationValueForCurrent_x1 = flash_read(CalibrationDataForVerify.CalibrationValueForCurrent1_AddresInEEprom,10,100000);
  8000588:	6220      	str	r0, [r4, #32]
 	CalibrationDataForVerify.CalibrationValueForVoltage = flash_read(CalibrationDataForVerify.CalibrationValueForVoltage_AddresInEEprom,10,100000);
  800058a:	210a      	movs	r1, #10
  800058c:	6ae0      	ldr	r0, [r4, #44]	; 0x2c
  800058e:	f7ff fedd 	bl	800034c <flash_read>
-	CalibrationDataForVerify.CalibrationValueForVoltage1 = flash_read(CalibrationDataForVerify.CalibrationValueForVoltage1_AddresInEEprom,10,100000);
+	CalibrationDataForVerify.CalibrationValueForU_OUT = flash_read(CalibrationDataForVerify.CalibrationValueForVoltage1_AddresInEEprom,10,100000);
  8000592:	462a      	mov	r2, r5
 	CalibrationDataForVerify.CalibrationValueForVoltage = flash_read(CalibrationDataForVerify.CalibrationValueForVoltage_AddresInEEprom,10,100000);
  8000594:	62a0      	str	r0, [r4, #40]	; 0x28
-	CalibrationDataForVerify.CalibrationValueForVoltage1 = flash_read(CalibrationDataForVerify.CalibrationValueForVoltage1_AddresInEEprom,10,100000);
+	CalibrationDataForVerify.CalibrationValueForU_OUT = flash_read(CalibrationDataForVerify.CalibrationValueForVoltage1_AddresInEEprom,10,100000);
  8000596:	210a      	movs	r1, #10
  8000598:	6b60      	ldr	r0, [r4, #52]	; 0x34
  800059a:	f7ff fed7 	bl	800034c <flash_read>
-	CalibrationDataForVerify.CalibrationValueForVoltage2 = flash_read(CalibrationDataForVerify.CalibrationValueForVoltage2_AddresInEEprom,10,100000);
+	CalibrationDataForVerify.CalibrationValueForU_IN = flash_read(CalibrationDataForVerify.CalibrationValueForVoltage2_AddresInEEprom,10,100000);
  800059e:	462a      	mov	r2, r5
-	CalibrationDataForVerify.CalibrationValueForVoltage1 = flash_read(CalibrationDataForVerify.CalibrationValueForVoltage1_AddresInEEprom,10,100000);
+	CalibrationDataForVerify.CalibrationValueForU_OUT = flash_read(CalibrationDataForVerify.CalibrationValueForVoltage1_AddresInEEprom,10,100000);
  80005a0:	6320      	str	r0, [r4, #48]	; 0x30
-	CalibrationDataForVerify.CalibrationValueForVoltage2 = flash_read(CalibrationDataForVerify.CalibrationValueForVoltage2_AddresInEEprom,10,100000);
+	CalibrationDataForVerify.CalibrationValueForU_IN = flash_read(CalibrationDataForVerify.CalibrationValueForVoltage2_AddresInEEprom,10,100000);
  80005a2:	210a      	movs	r1, #10
  80005a4:	6be0      	ldr	r0, [r4, #60]	; 0x3c
  80005a6:	f7ff fed1 	bl	800034c <flash_read>
 	CalibrationDataForVerify.ResistanceComp_Ishunt_Wires = flash_read(CalibrationDataForVerify.ResistanceComp_Ishunt_Wires_AddresInEEprom,70,300);
  80005aa:	f44f 7296 	mov.w	r2, #300	; 0x12c
-	CalibrationDataForVerify.CalibrationValueForVoltage2 = flash_read(CalibrationDataForVerify.CalibrationValueForVoltage2_AddresInEEprom,10,100000);
+	CalibrationDataForVerify.CalibrationValueForU_IN = flash_read(CalibrationDataForVerify.CalibrationValueForVoltage2_AddresInEEprom,10,100000);
  80005ae:	63a0      	str	r0, [r4, #56]	; 0x38
 	CalibrationDataForVerify.ResistanceComp_Ishunt_Wires = flash_read(CalibrationDataForVerify.ResistanceComp_Ishunt_Wires_AddresInEEprom,70,300);
  80005b0:	2146      	movs	r1, #70	; 0x46
@@ -2256,14 +2256,14 @@ void delay_ms(volatile uint32_t value)
  8001086:	2200      	movs	r2, #0
  8001088:	4860      	ldr	r0, [pc, #384]	; (800120c <InfoToUARTBeforeStart+0x1b4>)
  800108a:	f004 f903 	bl	8005294 <printToBufferUART1D>
-	logInfoD("CalibrationValueForCurrent =",CalibrationData.CalibrationValueForCurrent ,0);
+	logInfoD("CalibrationValueForCurrent =",CalibrationData.CalibrationValueForCurrent_x50 ,0);
  800108e:	4620      	mov	r0, r4
  8001090:	f004 f8c2 	bl	8005218 <printToBufferWithoutEndUART1>
  8001094:	69a9      	ldr	r1, [r5, #24]
  8001096:	2200      	movs	r2, #0
  8001098:	485d      	ldr	r0, [pc, #372]	; (8001210 <InfoToUARTBeforeStart+0x1b8>)
  800109a:	f004 f8fb 	bl	8005294 <printToBufferUART1D>
-	logInfoD("CalibrationValueForCurrent1 =",CalibrationData.CalibrationValueForCurrent1 ,0);
+	logInfoD("CalibrationValueForCurrent1 =",CalibrationData.CalibrationValueForCurrent_x1 ,0);
  800109e:	4620      	mov	r0, r4
  80010a0:	f004 f8ba 	bl	8005218 <printToBufferWithoutEndUART1>
  80010a4:	6a29      	ldr	r1, [r5, #32]
@@ -2277,14 +2277,14 @@ void delay_ms(volatile uint32_t value)
  80010b6:	2200      	movs	r2, #0
  80010b8:	4857      	ldr	r0, [pc, #348]	; (8001218 <InfoToUARTBeforeStart+0x1c0>)
  80010ba:	f004 f8eb 	bl	8005294 <printToBufferUART1D>
-	logInfoD("CalibrationValueForVoltage1 =",CalibrationData.CalibrationValueForVoltage1 ,0);
+	logInfoD("CalibrationValueForVoltage1 =",CalibrationData.CalibrationValueForU_OUT ,0);
  80010be:	4620      	mov	r0, r4
  80010c0:	f004 f8aa 	bl	8005218 <printToBufferWithoutEndUART1>
  80010c4:	6b29      	ldr	r1, [r5, #48]	; 0x30
  80010c6:	2200      	movs	r2, #0
  80010c8:	4854      	ldr	r0, [pc, #336]	; (800121c <InfoToUARTBeforeStart+0x1c4>)
  80010ca:	f004 f8e3 	bl	8005294 <printToBufferUART1D>
-	logInfoD("CalibrationValueForVoltage2 =",CalibrationData.CalibrationValueForVoltage2 ,0);
+	logInfoD("CalibrationValueForVoltage2 =",CalibrationData.CalibrationValueForU_IN,0);
  80010ce:	4620      	mov	r0, r4
  80010d0:	f004 f8a2 	bl	8005218 <printToBufferWithoutEndUART1>
  80010d4:	6ba9      	ldr	r1, [r5, #56]	; 0x38
@@ -5785,18 +5785,18 @@ void OUT_OFF()
  800262a:	701a      	strb	r2, [r3, #0]
 	discharge();
  800262c:	f7ff fff0 	bl	8002610 <discharge>
-	if (key == KEY_NEXT) CalibrationData.CalibrationValueForCurrent1++;
+	if (key == KEY_NEXT) CalibrationData.CalibrationValueForCurrent_x1++;
  8002630:	2d02      	cmp	r5, #2
  8002632:	d11e      	bne.n	8002672 <MenuCalibration_CURRENT_Load+0x52>
  8002634:	6a23      	ldr	r3, [r4, #32]
  8002636:	3301      	adds	r3, #1
-	if (key == KEY_BACK) CalibrationData.CalibrationValueForCurrent1--;
+	if (key == KEY_BACK) CalibrationData.CalibrationValueForCurrent_x1--;
  8002638:	6223      	str	r3, [r4, #32]
 	lcd_set_xy(0,0);
  800263a:	2100      	movs	r1, #0
  800263c:	4608      	mov	r0, r1
  800263e:	f7ff f9b9 	bl	80019b4 <lcd_set_xy>
-	PrintToLCD(itoa(CalibrationData.CalibrationValueForCurrent1));
+	PrintToLCD(itoa(CalibrationData.CalibrationValueForCurrent_x1));
  8002642:	6a20      	ldr	r0, [r4, #32]
  8002644:	f7fe fe14 	bl	8001270 <itoa>
  8002648:	f7ff fa34 	bl	8001ab4 <PrintToLCD>
@@ -5818,7 +5818,7 @@ void OUT_OFF()
 	PrintToLCD("mA  ");
  800266c:	4807      	ldr	r0, [pc, #28]	; (800268c <MenuCalibration_CURRENT_Load+0x6c>)
  800266e:	f7ff ba21 	b.w	8001ab4 <PrintToLCD>
-	if (key == KEY_BACK) CalibrationData.CalibrationValueForCurrent1--;
+	if (key == KEY_BACK) CalibrationData.CalibrationValueForCurrent_x1--;
  8002672:	2d01      	cmp	r5, #1
  8002674:	d1e1      	bne.n	800263a <MenuCalibration_CURRENT_Load+0x1a>
  8002676:	6a23      	ldr	r3, [r4, #32]
@@ -6354,19 +6354,19 @@ void OUT_ON()
  8002a86:	701a      	strb	r2, [r3, #0]
 	OUT_ON();
  8002a88:	f7ff ff80 	bl	800298c <OUT_ON>
-	if (key == KEY_NEXT) CalibrationData.CalibrationValueForCurrent++;
+	if (key == KEY_NEXT) CalibrationData.CalibrationValueForCurrent_x50++;
  8002a8c:	2802      	cmp	r0, #2
  8002a8e:	4c14      	ldr	r4, [pc, #80]	; (8002ae0 <MenuCalibration_CURRENT_Out+0x60>)
  8002a90:	d11e      	bne.n	8002ad0 <MenuCalibration_CURRENT_Out+0x50>
  8002a92:	69a3      	ldr	r3, [r4, #24]
  8002a94:	3301      	adds	r3, #1
-	if (key == KEY_BACK) CalibrationData.CalibrationValueForCurrent--;
+	if (key == KEY_BACK) CalibrationData.CalibrationValueForCurrent_x50--;
  8002a96:	61a3      	str	r3, [r4, #24]
 	lcd_set_xy(0,0);
  8002a98:	2100      	movs	r1, #0
  8002a9a:	4608      	mov	r0, r1
  8002a9c:	f7fe ff8a 	bl	80019b4 <lcd_set_xy>
-	PrintToLCD(itoa(CalibrationData.CalibrationValueForCurrent));
+	PrintToLCD(itoa(CalibrationData.CalibrationValueForCurrent_x50));
  8002aa0:	69a0      	ldr	r0, [r4, #24]
  8002aa2:	f7fe fbe5 	bl	8001270 <itoa>
  8002aa6:	f7ff f805 	bl	8001ab4 <PrintToLCD>
@@ -6388,7 +6388,7 @@ void OUT_ON()
 	PrintToLCD("mA  ");
  8002aca:	4808      	ldr	r0, [pc, #32]	; (8002aec <MenuCalibration_CURRENT_Out+0x6c>)
  8002acc:	f7fe bff2 	b.w	8001ab4 <PrintToLCD>
-	if (key == KEY_BACK) CalibrationData.CalibrationValueForCurrent--;
+	if (key == KEY_BACK) CalibrationData.CalibrationValueForCurrent_x50--;
  8002ad0:	2801      	cmp	r0, #1
  8002ad2:	d1e1      	bne.n	8002a98 <MenuCalibration_CURRENT_Out+0x18>
  8002ad4:	69a3      	ldr	r3, [r4, #24]
@@ -6468,19 +6468,19 @@ void OUT_ON()
  8002b66:	701a      	strb	r2, [r3, #0]
 	OUT_ON();
  8002b68:	f7ff ff10 	bl	800298c <OUT_ON>
-	if (key == KEY_NEXT) CalibrationData.CalibrationValueForVoltage1++;
+	if (key == KEY_NEXT) CalibrationData.CalibrationValueForU_OUT++;
  8002b6c:	2802      	cmp	r0, #2
  8002b6e:	4c14      	ldr	r4, [pc, #80]	; (8002bc0 <MenuCalibration_VoltageOut+0x60>)
  8002b70:	d11f      	bne.n	8002bb2 <MenuCalibration_VoltageOut+0x52>
  8002b72:	6b23      	ldr	r3, [r4, #48]	; 0x30
  8002b74:	3301      	adds	r3, #1
-	if (key == KEY_BACK) CalibrationData.CalibrationValueForVoltage1--;
+	if (key == KEY_BACK) CalibrationData.CalibrationValueForU_OUT--;
  8002b76:	6323      	str	r3, [r4, #48]	; 0x30
 	lcd_set_xy(0,0);
  8002b78:	2100      	movs	r1, #0
  8002b7a:	4608      	mov	r0, r1
  8002b7c:	f7fe ff1a 	bl	80019b4 <lcd_set_xy>
-	PrintToLCD(itoa(CalibrationData.CalibrationValueForVoltage1));
+	PrintToLCD(itoa(CalibrationData.CalibrationValueForU_OUT));
  8002b80:	6b20      	ldr	r0, [r4, #48]	; 0x30
  8002b82:	f7fe fb75 	bl	8001270 <itoa>
  8002b86:	f7fe ff95 	bl	8001ab4 <PrintToLCD>
@@ -6503,7 +6503,7 @@ void OUT_ON()
 	PrintToLCD("V  ");
  8002bac:	4807      	ldr	r0, [pc, #28]	; (8002bcc <MenuCalibration_VoltageOut+0x6c>)
  8002bae:	f7fe bf81 	b.w	8001ab4 <PrintToLCD>
-	if (key == KEY_BACK) CalibrationData.CalibrationValueForVoltage1--;
+	if (key == KEY_BACK) CalibrationData.CalibrationValueForU_OUT--;
  8002bb2:	2801      	cmp	r0, #1
  8002bb4:	d1e0      	bne.n	8002b78 <MenuCalibration_VoltageOut+0x18>
  8002bb6:	6b23      	ldr	r3, [r4, #48]	; 0x30
@@ -6525,19 +6525,19 @@ void OUT_ON()
  8002bd6:	701a      	strb	r2, [r3, #0]
 	OUT_ON();
  8002bd8:	f7ff fed8 	bl	800298c <OUT_ON>
-	if (key == KEY_NEXT) CalibrationData.CalibrationValueForVoltage2++;
+	if (key == KEY_NEXT) CalibrationData.CalibrationValueForU_IN++;
  8002bdc:	2802      	cmp	r0, #2
  8002bde:	4c14      	ldr	r4, [pc, #80]	; (8002c30 <MenuCalibration_VoltageIn+0x60>)
  8002be0:	d11f      	bne.n	8002c22 <MenuCalibration_VoltageIn+0x52>
  8002be2:	6ba3      	ldr	r3, [r4, #56]	; 0x38
  8002be4:	3301      	adds	r3, #1
-	if (key == KEY_BACK) CalibrationData.CalibrationValueForVoltage2--;
+	if (key == KEY_BACK) CalibrationData.CalibrationValueForU_IN--;
  8002be6:	63a3      	str	r3, [r4, #56]	; 0x38
 	lcd_set_xy(0,0);
  8002be8:	2100      	movs	r1, #0
  8002bea:	4608      	mov	r0, r1
  8002bec:	f7fe fee2 	bl	80019b4 <lcd_set_xy>
-	PrintToLCD(itoa(CalibrationData.CalibrationValueForVoltage2));
+	PrintToLCD(itoa(CalibrationData.CalibrationValueForU_IN));
  8002bf0:	6ba0      	ldr	r0, [r4, #56]	; 0x38
  8002bf2:	f7fe fb3d 	bl	8001270 <itoa>
  8002bf6:	f7fe ff5d 	bl	8001ab4 <PrintToLCD>
@@ -6560,7 +6560,7 @@ void OUT_ON()
 	PrintToLCD("V  ");
  8002c1c:	4807      	ldr	r0, [pc, #28]	; (8002c3c <MenuCalibration_VoltageIn+0x6c>)
  8002c1e:	f7fe bf49 	b.w	8001ab4 <PrintToLCD>
-	if (key == KEY_BACK) CalibrationData.CalibrationValueForVoltage2--;
+	if (key == KEY_BACK) CalibrationData.CalibrationValueForU_IN--;
  8002c22:	2801      	cmp	r0, #1
  8002c24:	d1e0      	bne.n	8002be8 <MenuCalibration_VoltageIn+0x18>
  8002c26:	6ba3      	ldr	r3, [r4, #56]	; 0x38
@@ -9573,7 +9573,7 @@ void adc_func()
  80044da:	8001      	strhls	r1, [r0, #0]
 	}
 
-	Ut = (RegularConvData[1] * CalibrationData.CalibrationValueForVoltage2) / RegularConvData[7];
+	Ut = (RegularConvData[1] * CalibrationData.CalibrationValueForU_IN) / RegularConvData[7];
  80044dc:	8863      	ldrh	r3, [r4, #2]
  80044de:	89e2      	ldrh	r2, [r4, #14]
  80044e0:	b299      	uxth	r1, r3
@@ -9590,7 +9590,7 @@ void adc_func()
  80044f8:	8018      	strh	r0, [r3, #0]
 
 
-	It = (RegularConvData[0] * CalibrationData.CalibrationValueForCurrent*10) / RegularConvData[7] ;//  Current A/10
+	It = (RegularConvData[0] * CalibrationData.CalibrationValueForCurrent_x50*10) / RegularConvData[7] ;//  Current A/10
  80044fa:	8821      	ldrh	r1, [r4, #0]
  80044fc:	89e3      	ldrh	r3, [r4, #14]
  80044fe:	b289      	uxth	r1, r1
@@ -9641,7 +9641,7 @@ void adc_func()
  800454c:	6019      	str	r1, [r3, #0]
 	}
 
-	It= (RegularConvData[3] * CalibrationData.CalibrationValueForCurrent1*10) / RegularConvData[7] ;//  Current A/10
+	It= (RegularConvData[3] * CalibrationData.CalibrationValueForCurrent_x1*10) / RegularConvData[7] ;//  Current A/10
  800454e:	88e1      	ldrh	r1, [r4, #6]
  8004550:	89e3      	ldrh	r3, [r4, #14]
  8004552:	b289      	uxth	r1, r1
@@ -9700,7 +9700,7 @@ void adc_func()
  80045ac:	8033      	strh	r3, [r6, #0]
 
 
-	Ut = (RegularConvData[2] * CalibrationData.CalibrationValueForVoltage1) / RegularConvData[7];
+	Ut = (RegularConvData[2] * CalibrationData.CalibrationValueForU_OUT) / RegularConvData[7];
  80045ae:	88a3      	ldrh	r3, [r4, #4]
  80045b0:	89e2      	ldrh	r2, [r4, #14]
  80045b2:	b299      	uxth	r1, r3

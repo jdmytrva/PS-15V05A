@@ -60,15 +60,15 @@ struct StructCalibrationValuetoSaveInFlash CalibrationDataFactory=
 		ADDRESS_FLASH_CALIBRATTION+4,
 		0,//Calibration0ValueForCurrent1
 		ADDRESS_FLASH_CALIBRATTION+8,
-		141,//CalibrationValueForCurrent Resistor 6.2k || 4.7k  1%
+		141,//CalibrationValueForCurrent x50
 		ADDRESS_FLASH_CALIBRATTION+12,
-		141,//CalibrationValueForCurrent1 Resistor 6.2k || 4.7k  1%
+		141,//CalibrationValueForCurrent x1
 		ADDRESS_FLASH_CALIBRATTION+16,
-		1109,//CalibrationValueForVoltage Resistor 8.2k 1%
+		1109,//z
 		ADDRESS_FLASH_CALIBRATTION+20,
-		1109,//CalibrationValueForVoltage1 Resistor 8.2k 1%
+		1109,//CalibrationValueForVoltage out
 		ADDRESS_FLASH_CALIBRATTION+24,
-		1109,//CalibrationValueForVoltage2 Resistor 8.2k 1%
+		1109,//CalibrationValueForVoltage in
 		ADDRESS_FLASH_CALIBRATTION+28,
 		135,//ResistanceComp_Ishunt_Wires mOm 116
 		ADDRESS_FLASH_CALIBRATTION+32,
@@ -375,11 +375,11 @@ void InfoToUARTBeforeStart(void)
 	logInfoD("CRC(Calibration) =",CalibrationData.CRC_data,0);
 	logInfoD("Calibration0ValueForCurrent =",CalibrationData.Calibration0ValueForCurrent ,0);
 	logInfoD("Calibration0ValueForCurrent1 =",CalibrationData.Calibration0ValueForCurrent1 ,0);
-	logInfoD("CalibrationValueForCurrent =",CalibrationData.CalibrationValueForCurrent ,0);
-	logInfoD("CalibrationValueForCurrent1 =",CalibrationData.CalibrationValueForCurrent1 ,0);
+	logInfoD("CalibrationValueForCurrent =",CalibrationData.CalibrationValueForCurrent_x50 ,0);
+	logInfoD("CalibrationValueForCurrent1 =",CalibrationData.CalibrationValueForCurrent_x1 ,0);
 	logInfoD("CalibrationValueForVoltage =",CalibrationData.CalibrationValueForVoltage ,0);
-	logInfoD("CalibrationValueForVoltage1 =",CalibrationData.CalibrationValueForVoltage1 ,0);
-	logInfoD("CalibrationValueForVoltage2 =",CalibrationData.CalibrationValueForVoltage2 ,0);
+	logInfoD("CalibrationValueForVoltage1 =",CalibrationData.CalibrationValueForU_OUT ,0);
+	logInfoD("CalibrationValueForVoltage2 =",CalibrationData.CalibrationValueForU_IN,0);
 	logInfoD("ResistanceComp_Ishunt_Wires =",CalibrationData.ResistanceComp_Ishunt_Wires ,0) ;
 	logInfoD("ResistanceComp_MOSFET =",CalibrationData.ResistanceComp_MOSFET ,0) ;
 	delay_ms(50);

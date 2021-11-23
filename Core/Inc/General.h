@@ -58,19 +58,19 @@ struct StructCalibrationValuetoSaveInFlash
 	uint32_t Calibration0ValueForCurrent1;
 	uint32_t Calibration0ValueForCurrent1_AddresInEEprom;
 
-	uint32_t CalibrationValueForCurrent;
+	uint32_t CalibrationValueForCurrent_x50;
 	uint32_t CalibrationValueForCurrent_AddresInEEprom;
 
-	uint32_t CalibrationValueForCurrent1;
+	uint32_t CalibrationValueForCurrent_x1;
 	uint32_t CalibrationValueForCurrent1_AddresInEEprom;
 
 	uint32_t CalibrationValueForVoltage;
 	uint32_t CalibrationValueForVoltage_AddresInEEprom;
 
-	uint32_t CalibrationValueForVoltage1;
+	uint32_t CalibrationValueForU_OUT;
 	uint32_t CalibrationValueForVoltage1_AddresInEEprom;
 
-	uint32_t CalibrationValueForVoltage2;
+	uint32_t CalibrationValueForU_IN;
 	uint32_t CalibrationValueForVoltage2_AddresInEEprom;
 
 	uint32_t ResistanceComp_Ishunt_Wires;
