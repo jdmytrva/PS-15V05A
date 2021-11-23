@@ -184,23 +184,19 @@ void MenuPowerSupply(Key_Pressed_t key) //PowerSupply
 {
 	EnterInMenu_Status = 1;
 	lcd_set_xy(0,0);
+	PrintToLCD(itoa_koma(U_OUT,2));
+	PrintToLCD("V  ");
+	lcd_set_xy(7,0);
+	PrintToLCD(itoa(Current));
+	PrintToLCD("mA    ");
+
 	if (On_off == 0)
 	{
-		PrintToLCD(itoa_koma(U_PS,2));
-		PrintToLCD("V  ");
-		lcd_set_xy(7,0);
-		PrintToLCD(itoa(Current));
-		PrintToLCD("mA   ");
 		lcd_set_xy(5,1);
 		PrintToLCD("OFF ");
 	}
 	else
 	{
-		PrintToLCD(itoa_koma(U_OUT,2));
-		PrintToLCD("V  ");
-		lcd_set_xy(7,0);
-		PrintToLCD(itoa(Current));
-		PrintToLCD("mA    ");
 		lcd_set_xy(6,1);
 		PrintToLCD("ON ");
 	}
@@ -219,7 +215,6 @@ void MenuPowerSupply(Key_Pressed_t key) //PowerSupply
     OUTStateAfterPowerUpFunction();
 
 }
-
 void MenuLoad(Key_Pressed_t key) //Load
 {
 	EnterInMenu_Status = 1;
@@ -2045,11 +2040,11 @@ void OUT_ON()
 
 void FAN_ON()
 {
-	GPIOB->BSRR =  GPIO_BSRR_BS1;//FAN ON
+	GPIOB->BSRR =  GPIO_BSRR_BS0;//FAN ON
 }
 void FAN_OFF()
 {
-	GPIOB->BSRR =  GPIO_BSRR_BR1;//FAN OFF
+	GPIOB->BSRR =  GPIO_BSRR_BR0;//FAN OFF
 }
 
 void LOAD_ON()
@@ -2109,8 +2104,8 @@ void SysTick_Callback()//1 mc
 		if (time_sec%2==0) GPIOA->BSRR =  GPIO_BSRR_BS15;
 		else GPIOA->BSRR =  GPIO_BSRR_BR15;
 
-		if (Current >= 1500) FAN_ON();
-		if (Current < 1500) FAN_OFF();
+		if (Current >= 1000) FAN_ON();
+		if (Current < 1000) FAN_OFF();
 
 	}
 	Count10mSecond++;
