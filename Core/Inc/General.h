@@ -142,8 +142,8 @@ struct StructValuetoSaveInFlashWhenPowerOFF SaveDataWhenPowerOffFactory;
 //ADC
 volatile uint16_t U_OUT_ForSetResistance;
 volatile int16_t Current_RAW;
-volatile int16_t Current_load ;
-volatile int16_t Current_Out ;
+volatile int16_t Current_x1 ;
+volatile int16_t Current_x50 ;
 volatile int32_t Temperature;
 volatile int32_t Rt;
 

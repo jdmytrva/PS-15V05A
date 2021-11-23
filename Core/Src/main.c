@@ -1279,7 +1279,7 @@ void MenuDIAGNOSTIC(Key_Pressed_t key)
 		LOAD_ON();
 		lcd_set_xy(0,0);
 		PrintToLCD("I(l) ");
-		PrintToLCD(itoa(Current_load));
+		PrintToLCD(itoa(Current_x1));
 		PrintToLCD("mA ");
 		PrintToLCD(itoa(RegularConvData[0]));
 		PrintToLCD("       ");
@@ -1328,7 +1328,7 @@ void MenuCalibration_CURRENT_Out_to_0(Key_Pressed_t key)
 	PrintToLCD("mA >> set 0   ");
 	if (key == KEY_NEXT)
 	{
-		CalibrationData.Calibration0ValueForCurrent = Current_Out;
+		CalibrationData.Calibration0ValueForCurrent = Current_x50;
 		CalibrationWriteToFlash_CRC();
 	}
 }
@@ -1340,7 +1340,7 @@ void MenuCalibration_CURRENT_Load_to_0(Key_Pressed_t key)
 	PrintToLCD("mA >> set 0   ");
 	if (key == KEY_NEXT)
 	{
-		CalibrationData.Calibration0ValueForCurrent1 = Current_load;
+		CalibrationData.Calibration0ValueForCurrent1 = Current_x1;
 		CalibrationWriteToFlash_CRC();
 	}
 }
@@ -2164,7 +2164,7 @@ void adc_func()
 	SumI1Counter ++;
 	if (SumI1Counter >= NUM_READ)
 	{
-		Current_Out = SumI1/NUM_READ;
+		Current_x50 = SumI1/NUM_READ;
 		SumI1Counter = 0;
 		SumI1 = 0;
 	}
@@ -2175,11 +2175,11 @@ void adc_func()
 	SumI2Counter ++;
 	if (SumI2Counter >= NUM_READ)
 	{
-		Current_load = SumI2/NUM_READ;
+		Current_x1 = SumI2/NUM_READ;
 		SumI2Counter = 0;
 		SumI2 = 0;
 	}
-	Current = (Current_Out-CalibrationData.Calibration0ValueForCurrent)/1 ;//2745;
+	Current = (Current_x50-CalibrationData.Calibration0ValueForCurrent)/1 ;//2745;
 
 
 	Ut = (RegularConvData[2] * CalibrationData.CalibrationValueForVoltage1) / RegularConvData[7];

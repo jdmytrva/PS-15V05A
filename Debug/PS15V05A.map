@@ -16,6 +16,7 @@ c:/st/stm32cubeide_1.4.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externalt
 Allocating common symbols
 Common symbol       size              file
 
+Current_x50         0x2               ./Core/Src/Eeprom.o
 U_12V               0x2               ./Core/Src/Eeprom.o
 Temperature         0x4               ./Core/Src/Eeprom.o
 Current_RAW         0x2               ./Core/Src/Eeprom.o
@@ -25,6 +26,7 @@ SelectedOptionValue1
                     0x4               ./Core/Src/main.o
 Current             0x2               ./Core/Src/Eeprom.o
 ChargeDurationSec   0x4               ./Core/Src/main.o
+Current_x1          0x2               ./Core/Src/Eeprom.o
 RegularConvData     0x10              ./Core/Src/Eeprom.o
 U_Controller        0x2               ./Core/Src/Eeprom.o
 SelectedOptionValue
@@ -120,6 +122,10 @@ Discarded input sections
  .data          0x0000000000000000        0x0 ./Core/Src/General.o
  .bss           0x0000000000000000        0x0 ./Core/Src/General.o
  .bss.CountAnymSecond
+                0x0000000000000000        0x2 ./Core/Src/General.o
+ .bss.Current_Out
+                0x0000000000000000        0x2 ./Core/Src/General.o
+ .bss.Current_load
                 0x0000000000000000        0x2 ./Core/Src/General.o
  .bss.Seconds   0x0000000000000000        0x4 ./Core/Src/General.o
  .bss.f1        0x0000000000000000        0x4 ./Core/Src/General.o
@@ -479,7 +485,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x26 ./Core/Src/stm32f1xx_hal_msp.o
  .debug_macro   0x0000000000000000       0x22 ./Core/Src/stm32f1xx_hal_msp.o
  .debug_line    0x0000000000000000      0x5e7 ./Core/Src/stm32f1xx_hal_msp.o
- .debug_str     0x0000000000000000    0x3ef36 ./Core/Src/stm32f1xx_hal_msp.o
+ .debug_str     0x0000000000000000    0x3ef34 ./Core/Src/stm32f1xx_hal_msp.o
  .comment       0x0000000000000000       0x54 ./Core/Src/stm32f1xx_hal_msp.o
  .debug_frame   0x0000000000000000       0x2c ./Core/Src/stm32f1xx_hal_msp.o
  .ARM.attributes
@@ -2374,164 +2380,160 @@ LOAD c:/st/stm32cubeide_1.4.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
  .bss.Count10mSecond
                 0x00000000200002b0        0x2 ./Core/Src/General.o
                 0x00000000200002b0                Count10mSecond
- .bss.Current_Out
-                0x00000000200002b2        0x2 ./Core/Src/General.o
-                0x00000000200002b2                Current_Out
- .bss.Current_load
-                0x00000000200002b4        0x2 ./Core/Src/General.o
-                0x00000000200002b4                Current_load
  .bss.U_OUT_ForSetResistance
-                0x00000000200002b6        0x2 ./Core/Src/General.o
-                0x00000000200002b6                U_OUT_ForSetResistance
+                0x00000000200002b2        0x2 ./Core/Src/General.o
+                0x00000000200002b2                U_OUT_ForSetResistance
  .bss.bufferUart1
-                0x00000000200002b8      0x45c ./Core/Src/General.o
-                0x00000000200002b8                bufferUart1
+                0x00000000200002b4      0x45c ./Core/Src/General.o
+                0x00000000200002b4                bufferUart1
  .bss.InputValueI1.5130
-                0x0000000020000714        0xc ./Core/Src/Lib.o
+                0x0000000020000710        0xc ./Core/Src/Lib.o
  .bss.InputValueI2.5138
-                0x0000000020000720        0xc ./Core/Src/Lib.o
+                0x000000002000071c        0xc ./Core/Src/Lib.o
  .bss.InputValueU1.5146
-                0x000000002000072c        0xc ./Core/Src/Lib.o
+                0x0000000020000728        0xc ./Core/Src/Lib.o
  .bss.InputValueU2.5154
-                0x0000000020000738        0xc ./Core/Src/Lib.o
+                0x0000000020000734        0xc ./Core/Src/Lib.o
  .bss.InputValueU3.5162
-                0x0000000020000744        0xc ./Core/Src/Lib.o
- .bss.s1.4992   0x0000000020000750       0x10 ./Core/Src/Lib.o
- .bss.s1.5021   0x0000000020000760       0x11 ./Core/Src/Lib.o
- *fill*         0x0000000020000771        0x3 
+                0x0000000020000740        0xc ./Core/Src/Lib.o
+ .bss.s1.4992   0x000000002000074c       0x10 ./Core/Src/Lib.o
+ .bss.s1.5021   0x000000002000075c       0x11 ./Core/Src/Lib.o
+ *fill*         0x000000002000076d        0x3 
  .bss.MenuWriteFunc
-                0x0000000020000774        0x4 ./Core/Src/MicroMenu2_1.o
- .bss.pos_x     0x0000000020000778        0x1 ./Core/Src/hd44780_driver.o
-                0x0000000020000778                pos_x
- .bss.pos_y     0x0000000020000779        0x1 ./Core/Src/hd44780_driver.o
-                0x0000000020000779                pos_y
- *fill*         0x000000002000077a        0x2 
+                0x0000000020000770        0x4 ./Core/Src/MicroMenu2_1.o
+ .bss.pos_x     0x0000000020000774        0x1 ./Core/Src/hd44780_driver.o
+                0x0000000020000774                pos_x
+ .bss.pos_y     0x0000000020000775        0x1 ./Core/Src/hd44780_driver.o
+                0x0000000020000775                pos_y
+ *fill*         0x0000000020000776        0x2 
  .bss.BatteryCapacityCharge
-                0x000000002000077c        0x4 ./Core/Src/main.o
-                0x000000002000077c                BatteryCapacityCharge
+                0x0000000020000778        0x4 ./Core/Src/main.o
+                0x0000000020000778                BatteryCapacityCharge
  .bss.BatteryCapacityDischargeCurrent
-                0x0000000020000780        0x4 ./Core/Src/main.o
-                0x0000000020000780                BatteryCapacityDischargeCurrent
+                0x000000002000077c        0x4 ./Core/Src/main.o
+                0x000000002000077c                BatteryCapacityDischargeCurrent
  .bss.BatteryCapacityDischargeCurrentAfterPOwerUp
-                0x0000000020000784        0x4 ./Core/Src/main.o
-                0x0000000020000784                BatteryCapacityDischargeCurrentAfterPOwerUp
+                0x0000000020000780        0x4 ./Core/Src/main.o
+                0x0000000020000780                BatteryCapacityDischargeCurrentAfterPOwerUp
  .bss.BatteryLow
-                0x0000000020000788        0x1 ./Core/Src/main.o
-                0x0000000020000788                BatteryLow
+                0x0000000020000784        0x1 ./Core/Src/main.o
+                0x0000000020000784                BatteryLow
  .bss.Blink_message_counter
-                0x0000000020000789        0x1 ./Core/Src/main.o
-                0x0000000020000789                Blink_message_counter
+                0x0000000020000785        0x1 ./Core/Src/main.o
+                0x0000000020000785                Blink_message_counter
  .bss.ChargeDischargeState
-                0x000000002000078a        0x1 ./Core/Src/main.o
-                0x000000002000078a                ChargeDischargeState
+                0x0000000020000786        0x1 ./Core/Src/main.o
+                0x0000000020000786                ChargeDischargeState
  .bss.ChargeStatusForTimer
-                0x000000002000078b        0x1 ./Core/Src/main.o
-                0x000000002000078b                ChargeStatusForTimer
+                0x0000000020000787        0x1 ./Core/Src/main.o
+                0x0000000020000787                ChargeStatusForTimer
  .bss.ChargeTimeSec
-                0x000000002000078c        0x4 ./Core/Src/main.o
-                0x000000002000078c                ChargeTimeSec
+                0x0000000020000788        0x4 ./Core/Src/main.o
+                0x0000000020000788                ChargeTimeSec
  .bss.CheckingCapacityCounter
-                0x0000000020000790        0x1 ./Core/Src/main.o
-                0x0000000020000790                CheckingCapacityCounter
+                0x000000002000078c        0x1 ./Core/Src/main.o
+                0x000000002000078c                CheckingCapacityCounter
  .bss.CountShow
-                0x0000000020000791        0x1 ./Core/Src/main.o
-                0x0000000020000791                CountShow
+                0x000000002000078d        0x1 ./Core/Src/main.o
+                0x000000002000078d                CountShow
  .bss.CountShow1
-                0x0000000020000792        0x1 ./Core/Src/main.o
-                0x0000000020000792                CountShow1
+                0x000000002000078e        0x1 ./Core/Src/main.o
+                0x000000002000078e                CountShow1
  .bss.CountShowBT
-                0x0000000020000793        0x1 ./Core/Src/main.o
-                0x0000000020000793                CountShowBT
+                0x000000002000078f        0x1 ./Core/Src/main.o
+                0x000000002000078f                CountShowBT
  .bss.DisChargeStatusForTimer
-                0x0000000020000794        0x1 ./Core/Src/main.o
-                0x0000000020000794                DisChargeStatusForTimer
- *fill*         0x0000000020000795        0x3 
+                0x0000000020000790        0x1 ./Core/Src/main.o
+                0x0000000020000790                DisChargeStatusForTimer
+ *fill*         0x0000000020000791        0x3 
  .bss.DischargeTimeSec
-                0x0000000020000798        0x4 ./Core/Src/main.o
-                0x0000000020000798                DischargeTimeSec
+                0x0000000020000794        0x4 ./Core/Src/main.o
+                0x0000000020000794                DischargeTimeSec
  .bss.DischargeTimeSec_Previous
-                0x000000002000079c        0x4 ./Core/Src/main.o
-                0x000000002000079c                DischargeTimeSec_Previous
+                0x0000000020000798        0x4 ./Core/Src/main.o
+                0x0000000020000798                DischargeTimeSec_Previous
  .bss.EnterInMenu_Status
-                0x00000000200007a0        0x1 ./Core/Src/main.o
-                0x00000000200007a0                EnterInMenu_Status
+                0x000000002000079c        0x1 ./Core/Src/main.o
+                0x000000002000079c                EnterInMenu_Status
  .bss.InitiStatus
-                0x00000000200007a1        0x1 ./Core/Src/main.o
-                0x00000000200007a1                InitiStatus
- .bss.On_off    0x00000000200007a2        0x1 ./Core/Src/main.o
-                0x00000000200007a2                On_off
- *fill*         0x00000000200007a3        0x1 
+                0x000000002000079d        0x1 ./Core/Src/main.o
+                0x000000002000079d                InitiStatus
+ .bss.On_off    0x000000002000079e        0x1 ./Core/Src/main.o
+                0x000000002000079e                On_off
+ *fill*         0x000000002000079f        0x1 
  .bss.PowerOffTimesec
-                0x00000000200007a4        0x4 ./Core/Src/main.o
-                0x00000000200007a4                PowerOffTimesec
+                0x00000000200007a0        0x4 ./Core/Src/main.o
+                0x00000000200007a0                PowerOffTimesec
  .bss.Status_Out
-                0x00000000200007a8        0x1 ./Core/Src/main.o
-                0x00000000200007a8                Status_Out
+                0x00000000200007a4        0x1 ./Core/Src/main.o
+                0x00000000200007a4                Status_Out
  .bss.Status_Timer_Sec
-                0x00000000200007a9        0x1 ./Core/Src/main.o
-                0x00000000200007a9                Status_Timer_Sec
- *fill*         0x00000000200007aa        0x2 
- .bss.SumI1     0x00000000200007ac        0x4 ./Core/Src/main.o
-                0x00000000200007ac                SumI1
+                0x00000000200007a5        0x1 ./Core/Src/main.o
+                0x00000000200007a5                Status_Timer_Sec
+ *fill*         0x00000000200007a6        0x2 
+ .bss.SumI1     0x00000000200007a8        0x4 ./Core/Src/main.o
+                0x00000000200007a8                SumI1
  .bss.SumI1Counter
-                0x00000000200007b0        0x2 ./Core/Src/main.o
-                0x00000000200007b0                SumI1Counter
- *fill*         0x00000000200007b2        0x2 
- .bss.SumI2     0x00000000200007b4        0x4 ./Core/Src/main.o
-                0x00000000200007b4                SumI2
+                0x00000000200007ac        0x2 ./Core/Src/main.o
+                0x00000000200007ac                SumI1Counter
+ *fill*         0x00000000200007ae        0x2 
+ .bss.SumI2     0x00000000200007b0        0x4 ./Core/Src/main.o
+                0x00000000200007b0                SumI2
  .bss.SumI2Counter
-                0x00000000200007b8        0x2 ./Core/Src/main.o
-                0x00000000200007b8                SumI2Counter
- *fill*         0x00000000200007ba        0x2 
- .bss.SumU1     0x00000000200007bc        0x4 ./Core/Src/main.o
-                0x00000000200007bc                SumU1
+                0x00000000200007b4        0x2 ./Core/Src/main.o
+                0x00000000200007b4                SumI2Counter
+ *fill*         0x00000000200007b6        0x2 
+ .bss.SumU1     0x00000000200007b8        0x4 ./Core/Src/main.o
+                0x00000000200007b8                SumU1
  .bss.SumU1Counter
-                0x00000000200007c0        0x2 ./Core/Src/main.o
-                0x00000000200007c0                SumU1Counter
- *fill*         0x00000000200007c2        0x2 
- .bss.SumU2     0x00000000200007c4        0x4 ./Core/Src/main.o
-                0x00000000200007c4                SumU2
+                0x00000000200007bc        0x2 ./Core/Src/main.o
+                0x00000000200007bc                SumU1Counter
+ *fill*         0x00000000200007be        0x2 
+ .bss.SumU2     0x00000000200007c0        0x4 ./Core/Src/main.o
+                0x00000000200007c0                SumU2
  .bss.SumU2Counter
-                0x00000000200007c8        0x2 ./Core/Src/main.o
-                0x00000000200007c8                SumU2Counter
- *fill*         0x00000000200007ca        0x2 
+                0x00000000200007c4        0x2 ./Core/Src/main.o
+                0x00000000200007c4                SumU2Counter
+ *fill*         0x00000000200007c6        0x2 
  .bss.TimerForReadyMeasurement_ms
-                0x00000000200007cc        0x4 ./Core/Src/main.o
-                0x00000000200007cc                TimerForReadyMeasurement_ms
+                0x00000000200007c8        0x4 ./Core/Src/main.o
+                0x00000000200007c8                TimerForReadyMeasurement_ms
  .bss.Timer_Sec
-                0x00000000200007d0        0x4 ./Core/Src/main.o
-                0x00000000200007d0                Timer_Sec
+                0x00000000200007cc        0x4 ./Core/Src/main.o
+                0x00000000200007cc                Timer_Sec
  .bss.U_BatteryTmp
-                0x00000000200007d4        0x2 ./Core/Src/main.o
-                0x00000000200007d4                U_BatteryTmp
- *fill*         0x00000000200007d6        0x2 
+                0x00000000200007d0        0x2 ./Core/Src/main.o
+                0x00000000200007d0                U_BatteryTmp
+ *fill*         0x00000000200007d2        0x2 
  .bss.U_Battery_Timer
-                0x00000000200007d8        0x4 ./Core/Src/main.o
-                0x00000000200007d8                U_Battery_Timer
- .bss.U_OUTtmp  0x00000000200007dc        0x4 ./Core/Src/main.o
-                0x00000000200007dc                U_OUTtmp
- .bss.comp      0x00000000200007e0        0x2 ./Core/Src/main.o
-                0x00000000200007e0                comp
+                0x00000000200007d4        0x4 ./Core/Src/main.o
+                0x00000000200007d4                U_Battery_Timer
+ .bss.U_OUTtmp  0x00000000200007d8        0x4 ./Core/Src/main.o
+                0x00000000200007d8                U_OUTtmp
+ .bss.comp      0x00000000200007dc        0x2 ./Core/Src/main.o
+                0x00000000200007dc                comp
  .bss.i_LogItems
-                0x00000000200007e2        0x2 ./Core/Src/main.o
-                0x00000000200007e2                i_LogItems
+                0x00000000200007de        0x2 ./Core/Src/main.o
+                0x00000000200007de                i_LogItems
  .bss.pressedKey
-                0x00000000200007e4        0x1 ./Core/Src/main.o
-                0x00000000200007e4                pressedKey
- *fill*         0x00000000200007e5        0x3 
- .bss.time_sec  0x00000000200007e8        0x4 ./Core/Src/main.o
-                0x00000000200007e8                time_sec
+                0x00000000200007e0        0x1 ./Core/Src/main.o
+                0x00000000200007e0                pressedKey
+ *fill*         0x00000000200007e1        0x3 
+ .bss.time_sec  0x00000000200007e4        0x4 ./Core/Src/main.o
+                0x00000000200007e4                time_sec
  *(COMMON)
- COMMON         0x00000000200007ec      0x228 ./Core/Src/Eeprom.o
-                0x00000000200007ec                U_12V
-                0x00000000200007f0                Temperature
-                0x00000000200007f4                Current_RAW
-                0x00000000200007f8                Temp_R_A_B
-                0x0000000020000858                U_IN
-                0x000000002000085a                Current
-                0x000000002000085c                RegularConvData
-                0x000000002000086c                U_Controller
-                0x000000002000086e                U_OUT
+ COMMON         0x00000000200007e8      0x22c ./Core/Src/Eeprom.o
+                0x00000000200007e8                Current_x50
+                0x00000000200007ea                U_12V
+                0x00000000200007ec                Temperature
+                0x00000000200007f0                Current_RAW
+                0x00000000200007f4                Temp_R_A_B
+                0x0000000020000854                U_IN
+                0x0000000020000856                Current
+                0x0000000020000858                Current_x1
+                0x000000002000085a                RegularConvData
+                0x000000002000086a                U_Controller
+                0x000000002000086c                U_OUT
                 0x0000000020000870                Rt
                 0x0000000020000874                U_PS
                 0x0000000020000878                LoggingData
@@ -2610,22 +2612,22 @@ LOAD c:/st/stm32cubeide_1.4.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
 LOAD c:/st/stm32cubeide_1.4.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libm.a
 LOAD c:/st/stm32cubeide_1.4.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7-m/nofp\libgcc.a
 
-.debug_info     0x0000000000000000    0x11a70
+.debug_info     0x0000000000000000    0x11a94
  .debug_info    0x0000000000000000     0x224f ./Core/Src/Eeprom.o
- .debug_info    0x000000000000224f     0x10eb ./Core/Src/General.o
- .debug_info    0x000000000000333a      0xc6e ./Core/Src/Lib.o
- .debug_info    0x0000000000003fa8      0x2c9 ./Core/Src/MicroMenu2_1.o
- .debug_info    0x0000000000004271     0x11de ./Core/Src/hd44780_driver.o
- .debug_info    0x000000000000544f     0x80b5 ./Core/Src/main.o
- .debug_info    0x000000000000d504      0x958 ./Core/Src/stm32f1xx_it.o
- .debug_info    0x000000000000de5c      0x284 ./Core/Src/system_stm32f1xx.o
- .debug_info    0x000000000000e0e0      0xc6b ./Core/Src/usart.o
- .debug_info    0x000000000000ed4b       0x22 ./Core/Startup/startup_stm32f100c8tx.o
- .debug_info    0x000000000000ed6d      0xa13 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_adc.o
- .debug_info    0x000000000000f780      0x95c ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_gpio.o
- .debug_info    0x00000000000100dc      0x6f4 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_rcc.o
- .debug_info    0x00000000000107d0      0x86f ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_usart.o
- .debug_info    0x000000000001103f      0xa31 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_utils.o
+ .debug_info    0x000000000000224f     0x110f ./Core/Src/General.o
+ .debug_info    0x000000000000335e      0xc6e ./Core/Src/Lib.o
+ .debug_info    0x0000000000003fcc      0x2c9 ./Core/Src/MicroMenu2_1.o
+ .debug_info    0x0000000000004295     0x11de ./Core/Src/hd44780_driver.o
+ .debug_info    0x0000000000005473     0x80b5 ./Core/Src/main.o
+ .debug_info    0x000000000000d528      0x958 ./Core/Src/stm32f1xx_it.o
+ .debug_info    0x000000000000de80      0x284 ./Core/Src/system_stm32f1xx.o
+ .debug_info    0x000000000000e104      0xc6b ./Core/Src/usart.o
+ .debug_info    0x000000000000ed6f       0x22 ./Core/Startup/startup_stm32f100c8tx.o
+ .debug_info    0x000000000000ed91      0xa13 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_adc.o
+ .debug_info    0x000000000000f7a4      0x95c ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_gpio.o
+ .debug_info    0x0000000000010100      0x6f4 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_rcc.o
+ .debug_info    0x00000000000107f4      0x86f ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_usart.o
+ .debug_info    0x0000000000011063      0xa31 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_utils.o
 
 .debug_abbrev   0x0000000000000000     0x2848
  .debug_abbrev  0x0000000000000000      0x3c3 ./Core/Src/Eeprom.o
@@ -2777,36 +2779,36 @@ LOAD c:/st/stm32cubeide_1.4.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
  .debug_line    0x000000000000a630      0x798 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_usart.o
  .debug_line    0x000000000000adc8      0x960 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_utils.o
 
-.debug_str      0x0000000000000000    0x44270
- .debug_str     0x0000000000000000    0x39809 ./Core/Src/Eeprom.o
-                                      0x39b1c (size before relaxing)
- .debug_str     0x0000000000039809      0x13a ./Core/Src/General.o
-                                      0x3988f (size before relaxing)
- .debug_str     0x0000000000039943      0x214 ./Core/Src/Lib.o
+.debug_str      0x0000000000000000    0x44287
+ .debug_str     0x0000000000000000    0x39807 ./Core/Src/Eeprom.o
+                                      0x39b1a (size before relaxing)
+ .debug_str     0x0000000000039807      0x153 ./Core/Src/General.o
+                                      0x398a6 (size before relaxing)
+ .debug_str     0x000000000003995a      0x214 ./Core/Src/Lib.o
                                       0x33092 (size before relaxing)
- .debug_str     0x0000000000039b57      0x5a8 ./Core/Src/MicroMenu2_1.o
+ .debug_str     0x0000000000039b6e      0x5a8 ./Core/Src/MicroMenu2_1.o
                                        0x3446 (size before relaxing)
- .debug_str     0x000000000003a0ff      0x1d7 ./Core/Src/hd44780_driver.o
-                                      0x3990e (size before relaxing)
- .debug_str     0x000000000003a2d6     0x6fbb ./Core/Src/main.o
-                                      0x4116c (size before relaxing)
- .debug_str     0x0000000000041291       0xe8 ./Core/Src/stm32f1xx_it.o
-                                      0x3efc7 (size before relaxing)
- .debug_str     0x0000000000041379       0x4a ./Core/Src/system_stm32f1xx.o
+ .debug_str     0x000000000003a116      0x1d7 ./Core/Src/hd44780_driver.o
+                                      0x3990c (size before relaxing)
+ .debug_str     0x000000000003a2ed     0x6fbb ./Core/Src/main.o
+                                      0x4116a (size before relaxing)
+ .debug_str     0x00000000000412a8       0xe8 ./Core/Src/stm32f1xx_it.o
+                                      0x3efc5 (size before relaxing)
+ .debug_str     0x0000000000041390       0x4a ./Core/Src/system_stm32f1xx.o
                                       0x32eed (size before relaxing)
- .debug_str     0x00000000000413c3       0xe6 ./Core/Src/usart.o
-                                      0x39880 (size before relaxing)
- .debug_str     0x00000000000414a9       0x36 ./Core/Startup/startup_stm32f100c8tx.o
+ .debug_str     0x00000000000413da       0xe6 ./Core/Src/usart.o
+                                      0x3987e (size before relaxing)
+ .debug_str     0x00000000000414c0       0x36 ./Core/Startup/startup_stm32f100c8tx.o
                                          0x66 (size before relaxing)
- .debug_str     0x00000000000414df     0x1308 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_adc.o
+ .debug_str     0x00000000000414f6     0x1308 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_adc.o
                                       0x3a004 (size before relaxing)
- .debug_str     0x00000000000427e7      0x3a0 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_gpio.o
+ .debug_str     0x00000000000427fe      0x3a0 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_gpio.o
                                       0x34909 (size before relaxing)
- .debug_str     0x0000000000042b87      0x2bf ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_rcc.o
+ .debug_str     0x0000000000042b9e      0x2bf ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_rcc.o
                                       0x34919 (size before relaxing)
- .debug_str     0x0000000000042e46      0x801 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_usart.o
+ .debug_str     0x0000000000042e5d      0x801 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_usart.o
                                       0x3633e (size before relaxing)
- .debug_str     0x0000000000043647      0xc29 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_utils.o
+ .debug_str     0x000000000004365e      0xc29 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_utils.o
                                       0x357e4 (size before relaxing)
 
 .comment        0x0000000000000000       0x53

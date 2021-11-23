@@ -27,25 +27,25 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
  11 .ARM.attributes 00000029  00000000  00000000  00020290  2**0
                   CONTENTS, READONLY
- 12 .debug_info   00011a70  00000000  00000000  000202b9  2**0
+ 12 .debug_info   00011a94  00000000  00000000  000202b9  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 13 .debug_abbrev 00002848  00000000  00000000  00031d29  2**0
+ 13 .debug_abbrev 00002848  00000000  00000000  00031d4d  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_loc    00005307  00000000  00000000  00034571  2**0
+ 14 .debug_loc    00005307  00000000  00000000  00034595  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_aranges 00000798  00000000  00000000  00039878  2**3
+ 15 .debug_aranges 00000798  00000000  00000000  000398a0  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_ranges 00001058  00000000  00000000  0003a010  2**3
+ 16 .debug_ranges 00001058  00000000  00000000  0003a038  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_macro  0000c3b4  00000000  00000000  0003b068  2**0
+ 17 .debug_macro  0000c3b4  00000000  00000000  0003b090  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_line   0000b728  00000000  00000000  0004741c  2**0
+ 18 .debug_line   0000b728  00000000  00000000  00047444  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    00044270  00000000  00000000  00052b44  2**0
+ 19 .debug_str    00044287  00000000  00000000  00052b6c  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .comment      00000053  00000000  00000000  00096db4  2**0
+ 20 .comment      00000053  00000000  00000000  00096df3  2**0
                   CONTENTS, READONLY
- 21 .debug_frame  0000162c  00000000  00000000  00096e08  2**2
+ 21 .debug_frame  0000162c  00000000  00000000  00096e48  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -1566,7 +1566,7 @@ void Generation_Coefficients_R_A_B()
  8000c4e:	e8bd 81f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
  8000c52:	bf00      	nop
  8000c54:	2000022c 	.word	0x2000022c
- 8000c58:	200007f8 	.word	0x200007f8
+ 8000c58:	200007f4 	.word	0x200007f4
  8000c5c:	ffffd8f0 	.word	0xffffd8f0
 
 08000c60 <GetTemperature>:
@@ -1621,7 +1621,7 @@ int32_t GetTemperature(int32_t Rtemp)
  8000ca0:	f06f 0009 	mvn.w	r0, #9
  8000ca4:	e7f4      	b.n	8000c90 <GetTemperature+0x30>
  8000ca6:	bf00      	nop
- 8000ca8:	200007f8 	.word	0x200007f8
+ 8000ca8:	200007f4 	.word	0x200007f4
 
 08000cac <WriteInLOG>:
 
@@ -2531,7 +2531,7 @@ char * itoa(int32_t n)
     	k++;
  80012e0:	e7ef      	b.n	80012c2 <itoa+0x52>
  80012e2:	bf00      	nop
- 80012e4:	20000750 	.word	0x20000750
+ 80012e4:	2000074c 	.word	0x2000074c
 
 080012e8 <itoaP>:
 
@@ -2766,7 +2766,7 @@ char * itoa_koma(int32_t n,uint8_t koma)
  8001428:	b252      	sxtb	r2, r2
     	i++;
  800142a:	e7dc      	b.n	80013e6 <itoa_koma+0x86>
- 800142c:	20000760 	.word	0x20000760
+ 800142c:	2000075c 	.word	0x2000075c
 
 08001430 <Module16>:
      s1[i] = '\0';
@@ -3235,7 +3235,7 @@ int32_t middle_of_3Imax1(int32_t value)
 }
  800166c:	4770      	bx	lr
  800166e:	bf00      	nop
- 8001670:	20000714 	.word	0x20000714
+ 8001670:	20000710 	.word	0x20000710
 
 08001674 <middle_of_3Imax2>:
 
@@ -3291,7 +3291,7 @@ int32_t middle_of_3Imax2(int32_t value)
 }
  80016a4:	4770      	bx	lr
  80016a6:	bf00      	nop
- 80016a8:	20000720 	.word	0x20000720
+ 80016a8:	2000071c 	.word	0x2000071c
 
 080016ac <middle_of_3Umax1>:
 
@@ -3347,7 +3347,7 @@ int32_t middle_of_3Umax1(int32_t value)
 }
  80016dc:	4770      	bx	lr
  80016de:	bf00      	nop
- 80016e0:	2000072c 	.word	0x2000072c
+ 80016e0:	20000728 	.word	0x20000728
 
 080016e4 <middle_of_3Umax2>:
 
@@ -3403,7 +3403,7 @@ int32_t middle_of_3Umax2(int32_t value)
 }
  8001714:	4770      	bx	lr
  8001716:	bf00      	nop
- 8001718:	20000738 	.word	0x20000738
+ 8001718:	20000734 	.word	0x20000734
 
 0800171c <middle_of_3Umax3>:
 int32_t middle_of_3Umax3(int32_t value)
@@ -3458,7 +3458,7 @@ int32_t middle_of_3Umax3(int32_t value)
 }
  800174c:	4770      	bx	lr
  800174e:	bf00      	nop
- 8001750:	20000744 	.word	0x20000744
+ 8001750:	20000740 	.word	0x20000740
 
 08001754 <RunningAverageI1>:
 	int8_t k = 1;  // 1 - 10
@@ -3554,7 +3554,7 @@ void Menu_Navigate(Menu_Item_t* const NewMenu)
  800178c:	bd10      	pop	{r4, pc}
  800178e:	bf00      	nop
  8001790:	08005e34 	.word	0x08005e34
- 8001794:	20000774 	.word	0x20000774
+ 8001794:	20000770 	.word	0x20000770
  8001798:	2000024c 	.word	0x2000024c
 
 0800179c <Menu_SetGenericWriteCallback>:
@@ -3568,7 +3568,7 @@ void Menu_SetGenericWriteCallback(void (*WriteFunc)( char* Text))
  80017a0:	4b02      	ldr	r3, [pc, #8]	; (80017ac <Menu_SetGenericWriteCallback+0x10>)
  80017a2:	6818      	ldr	r0, [r3, #0]
  80017a4:	f7ff bfe0 	b.w	8001768 <Menu_Navigate>
- 80017a8:	20000774 	.word	0x20000774
+ 80017a8:	20000770 	.word	0x20000770
  80017ac:	2000024c 	.word	0x2000024c
 
 080017b0 <Menu_SelectItem>:
@@ -3948,8 +3948,8 @@ void lcd_set_user_char(uint8_t char_num, char * char_data) {
  80019c8:	f040 00c0 	orr.w	r0, r0, #192	; 0xc0
  80019cc:	e7f9      	b.n	80019c2 <lcd_set_xy+0xe>
  80019ce:	bf00      	nop
- 80019d0:	20000778 	.word	0x20000778
- 80019d4:	20000779 	.word	0x20000779
+ 80019d0:	20000774 	.word	0x20000774
+ 80019d4:	20000775 	.word	0x20000775
 
 080019d8 <lcd_out>:
 void lcd_out(char * txt,uint8_t TypeOfLCD) {
@@ -4063,8 +4063,8 @@ void lcd_out(char * txt,uint8_t TypeOfLCD) {
  8001a7c:	f810 0cc0 	ldrbhi.w	r0, [r0, #-192]
  8001a80:	e7d5      	b.n	8001a2e <LcdOut+0x22>
  8001a82:	bf00      	nop
- 8001a84:	20000778 	.word	0x20000778
- 8001a88:	20000779 	.word	0x20000779
+ 8001a84:	20000774 	.word	0x20000774
+ 8001a88:	20000775 	.word	0x20000775
  8001a8c:	20000250 	.word	0x20000250
 
 08001a90 <lcd_clear>:
@@ -4183,7 +4183,7 @@ void MenuLog_Enter()
  8001b08:	801a      	strh	r2, [r3, #0]
 }
  8001b0a:	4770      	bx	lr
- 8001b0c:	200007e2 	.word	0x200007e2
+ 8001b0c:	200007de 	.word	0x200007de
 
 08001b10 <MenuCalibrationWriteToFlash_Enter>:
 			break;
@@ -4327,7 +4327,7 @@ void MenuCalibrationWriteToFlash_Enter(Key_Pressed_t key)
     delay_ms(600);
  8001c0c:	f44f 7016 	mov.w	r0, #600	; 0x258
  8001c10:	f7ff ba12 	b.w	8001038 <delay_ms>
- 8001c14:	20000793 	.word	0x20000793
+ 8001c14:	2000078f 	.word	0x2000078f
  8001c18:	08005e58 	.word	0x08005e58
  8001c1c:	20000154 	.word	0x20000154
  8001c20:	08005e69 	.word	0x08005e69
@@ -4450,8 +4450,8 @@ void MenuOption_Enter1(Key_Pressed_t key)
 }
  8001ce0:	b010      	add	sp, #64	; 0x40
  8001ce2:	bd10      	pop	{r4, pc}
- 8001ce4:	20000780 	.word	0x20000780
- 8001ce8:	20000798 	.word	0x20000798
+ 8001ce4:	2000077c 	.word	0x2000077c
+ 8001ce8:	20000794 	.word	0x20000794
  8001cec:	08005ebe 	.word	0x08005ebe
 
 08001cf0 <MenuCharge_Enter>:
@@ -4500,10 +4500,10 @@ void MenuOption_Enter1(Key_Pressed_t key)
 }
  8001d48:	b010      	add	sp, #64	; 0x40
  8001d4a:	bd10      	pop	{r4, pc}
- 8001d4c:	2000077c 	.word	0x2000077c
+ 8001d4c:	20000778 	.word	0x20000778
  8001d50:	080058d8 	.word	0x080058d8
  8001d54:	08005ec2 	.word	0x08005ec2
- 8001d58:	2000078c 	.word	0x2000078c
+ 8001d58:	20000788 	.word	0x20000788
  8001d5c:	08005ebe 	.word	0x08005ebe
 
 08001d60 <SelectedOption.part.0>:
@@ -4688,13 +4688,13 @@ __STATIC_INLINE void LL_ADC_REG_SetSequencerRanks(ADC_TypeDef *ADCx, uint32_t Ra
  8001e86:	2101      	movs	r1, #1
  8001e88:	2003      	movs	r0, #3
  8001e8a:	e7eb      	b.n	8001e64 <MenuLoad+0x5c>
- 8001e8c:	200007a0 	.word	0x200007a0
- 8001e90:	200007a2 	.word	0x200007a2
- 8001e94:	2000086e 	.word	0x2000086e
+ 8001e8c:	2000079c 	.word	0x2000079c
+ 8001e90:	2000079e 	.word	0x2000079e
+ 8001e94:	2000086c 	.word	0x2000086c
  8001e98:	08005eca 	.word	0x08005eca
- 8001e9c:	2000085a 	.word	0x2000085a
+ 8001e9c:	20000856 	.word	0x20000856
  8001ea0:	08005ecd 	.word	0x08005ecd
- 8001ea4:	20000789 	.word	0x20000789
+ 8001ea4:	20000785 	.word	0x20000785
 
 08001ea8 <MenuTraining_WriteInLOG>:
 	s[1] = '\0';
@@ -4814,7 +4814,7 @@ __STATIC_INLINE void LL_ADC_REG_SetSequencerRanks(ADC_TypeDef *ADCx, uint32_t Ra
  8001f6e:	dbcd      	blt.n	8001f0c <MenuLog+0x18>
  8001f70:	e7ce      	b.n	8001f10 <MenuLog+0x1c>
  8001f72:	bf00      	nop
- 8001f74:	200007e2 	.word	0x200007e2
+ 8001f74:	200007de 	.word	0x200007de
  8001f78:	20000878 	.word	0x20000878
  8001f7c:	080058d8 	.word	0x080058d8
  8001f80:	08005ed4 	.word	0x08005ed4
@@ -4843,7 +4843,7 @@ __STATIC_INLINE void LL_ADC_REG_SetSequencerRanks(ADC_TypeDef *ADCx, uint32_t Ra
  8001faa:	d108      	bne.n	8001fbe <MenuCalibration_CURRENT_Out_to_0+0x36>
 }
  8001fac:	e8bd 4010 	ldmia.w	sp!, {r4, lr}
-		CalibrationData.Calibration0ValueForCurrent = Current_Out;
+		CalibrationData.Calibration0ValueForCurrent = Current_x50;
  8001fb0:	4b05      	ldr	r3, [pc, #20]	; (8001fc8 <MenuCalibration_CURRENT_Out_to_0+0x40>)
  8001fb2:	4a06      	ldr	r2, [pc, #24]	; (8001fcc <MenuCalibration_CURRENT_Out_to_0+0x44>)
  8001fb4:	881b      	ldrh	r3, [r3, #0]
@@ -4853,9 +4853,9 @@ __STATIC_INLINE void LL_ADC_REG_SetSequencerRanks(ADC_TypeDef *ADCx, uint32_t Ra
  8001fba:	f7fe bcd5 	b.w	8000968 <CalibrationWriteToFlash_CRC>
 }
  8001fbe:	bd10      	pop	{r4, pc}
- 8001fc0:	2000085a 	.word	0x2000085a
+ 8001fc0:	20000856 	.word	0x20000856
  8001fc4:	08005ef4 	.word	0x08005ef4
- 8001fc8:	200002b2 	.word	0x200002b2
+ 8001fc8:	200007e8 	.word	0x200007e8
  8001fcc:	20000004 	.word	0x20000004
 
 08001fd0 <MenuCalibration_CURRENT_Load_to_0>:
@@ -4881,7 +4881,7 @@ __STATIC_INLINE void LL_ADC_REG_SetSequencerRanks(ADC_TypeDef *ADCx, uint32_t Ra
  8001ff2:	d108      	bne.n	8002006 <MenuCalibration_CURRENT_Load_to_0+0x36>
 }
  8001ff4:	e8bd 4010 	ldmia.w	sp!, {r4, lr}
-		CalibrationData.Calibration0ValueForCurrent1 = Current_load;
+		CalibrationData.Calibration0ValueForCurrent1 = Current_x1;
  8001ff8:	4b05      	ldr	r3, [pc, #20]	; (8002010 <MenuCalibration_CURRENT_Load_to_0+0x40>)
  8001ffa:	4a06      	ldr	r2, [pc, #24]	; (8002014 <MenuCalibration_CURRENT_Load_to_0+0x44>)
  8001ffc:	881b      	ldrh	r3, [r3, #0]
@@ -4891,9 +4891,9 @@ __STATIC_INLINE void LL_ADC_REG_SetSequencerRanks(ADC_TypeDef *ADCx, uint32_t Ra
  8002002:	f7fe bcb1 	b.w	8000968 <CalibrationWriteToFlash_CRC>
 }
  8002006:	bd10      	pop	{r4, pc}
- 8002008:	2000085a 	.word	0x2000085a
+ 8002008:	20000856 	.word	0x20000856
  800200c:	08005ef4 	.word	0x08005ef4
- 8002010:	200002b4 	.word	0x200002b4
+ 8002010:	20000858 	.word	0x20000858
  8002014:	20000004 	.word	0x20000004
 
 08002018 <MenuCalibration_BackToFactory>:
@@ -4979,7 +4979,7 @@ __STATIC_INLINE void LL_ADC_REG_SetSequencerRanks(ADC_TypeDef *ADCx, uint32_t Ra
  80020ac:	08005f25 	.word	0x08005f25
  80020b0:	08005f36 	.word	0x08005f36
  80020b4:	200000f4 	.word	0x200000f4
- 80020b8:	20000784 	.word	0x20000784
+ 80020b8:	20000780 	.word	0x20000780
  80020bc:	20000154 	.word	0x20000154
  80020c0:	20000a18 	.word	0x20000a18
  80020c4:	20000a1c 	.word	0x20000a1c
@@ -5142,7 +5142,7 @@ __STATIC_INLINE void LL_ADC_REG_SetSequencerRanks(ADC_TypeDef *ADCx, uint32_t Ra
 }
  80021e8:	bd10      	pop	{r4, pc}
  80021ea:	bf00      	nop
- 80021ec:	20000793 	.word	0x20000793
+ 80021ec:	2000078f 	.word	0x2000078f
  80021f0:	08005f5b 	.word	0x08005f5b
  80021f4:	08005f6c 	.word	0x08005f6c
  80021f8:	08005f7e 	.word	0x08005f7e
@@ -5630,8 +5630,8 @@ void BUT_Debrief(void)
 }
  8002536:	4770      	bx	lr
  8002538:	40010c00 	.word	0x40010c00
- 800253c:	200007e0 	.word	0x200007e0
- 8002540:	200007e4 	.word	0x200007e4
+ 800253c:	200007dc 	.word	0x200007dc
+ 8002540:	200007e0 	.word	0x200007e0
 
 08002544 <BUT_GetKey>:
 
@@ -5652,8 +5652,8 @@ Key_Pressed_t BUT_GetKey(void)
 }
  8002554:	4770      	bx	lr
  8002556:	bf00      	nop
- 8002558:	200007e4 	.word	0x200007e4
- 800255c:	200007a4 	.word	0x200007a4
+ 8002558:	200007e0 	.word	0x200007e0
+ 800255c:	200007a0 	.word	0x200007a0
 
 08002560 <Start_Timer_sec>:
 
@@ -5670,8 +5670,8 @@ void Start_Timer_sec()
 }
  800256c:	4770      	bx	lr
  800256e:	bf00      	nop
- 8002570:	200007d0 	.word	0x200007d0
- 8002574:	200007a9 	.word	0x200007a9
+ 8002570:	200007cc 	.word	0x200007cc
+ 8002574:	200007a5 	.word	0x200007a5
 
 08002578 <ClockOnLCD_noSec>:
 	if (strlen1(string)<2) lcd_out("0",1);
@@ -5758,8 +5758,8 @@ void OUT_OFF()
  8002600:	4770      	bx	lr
  8002602:	bf00      	nop
  8002604:	40010c00 	.word	0x40010c00
- 8002608:	200007a2 	.word	0x200007a2
- 800260c:	200007a8 	.word	0x200007a8
+ 8002608:	2000079e 	.word	0x2000079e
+ 800260c:	200007a4 	.word	0x200007a4
 
 08002610 <discharge>:
 {
@@ -5824,10 +5824,10 @@ void OUT_OFF()
  8002676:	6a23      	ldr	r3, [r4, #32]
  8002678:	3b01      	subs	r3, #1
  800267a:	e7dd      	b.n	8002638 <MenuCalibration_CURRENT_Load+0x18>
- 800267c:	200007a0 	.word	0x200007a0
+ 800267c:	2000079c 	.word	0x2000079c
  8002680:	20000004 	.word	0x20000004
  8002684:	08006071 	.word	0x08006071
- 8002688:	2000085a 	.word	0x2000085a
+ 8002688:	20000856 	.word	0x20000856
  800268c:	08006088 	.word	0x08006088
 
 08002690 <discharge1>:
@@ -5863,8 +5863,8 @@ void OUT_OFF()
 }
  80026c0:	bd08      	pop	{r3, pc}
  80026c2:	bf00      	nop
- 80026c4:	2000078a 	.word	0x2000078a
- 80026c8:	200007cc 	.word	0x200007cc
+ 80026c4:	20000786 	.word	0x20000786
+ 80026c8:	200007c8 	.word	0x200007c8
  80026cc:	080058d8 	.word	0x080058d8
  80026d0:	0800608d 	.word	0x0800608d
 
@@ -6167,37 +6167,37 @@ void OUT_OFF()
  80028fe:	2301      	movs	r3, #1
  8002900:	e707      	b.n	8002712 <MenuDisCharge+0x3e>
  8002902:	bf00      	nop
- 8002904:	200007a1 	.word	0x200007a1
- 8002908:	200007a0 	.word	0x200007a0
- 800290c:	20000788 	.word	0x20000788
- 8002910:	2000078b 	.word	0x2000078b
- 8002914:	20000794 	.word	0x20000794
- 8002918:	20000780 	.word	0x20000780
- 800291c:	20000798 	.word	0x20000798
- 8002920:	2000086e 	.word	0x2000086e
- 8002924:	200007d4 	.word	0x200007d4
+ 8002904:	2000079d 	.word	0x2000079d
+ 8002908:	2000079c 	.word	0x2000079c
+ 800290c:	20000784 	.word	0x20000784
+ 8002910:	20000787 	.word	0x20000787
+ 8002914:	20000790 	.word	0x20000790
+ 8002918:	2000077c 	.word	0x2000077c
+ 800291c:	20000794 	.word	0x20000794
+ 8002920:	2000086c 	.word	0x2000086c
+ 8002924:	200007d0 	.word	0x200007d0
  8002928:	20000154 	.word	0x20000154
- 800292c:	200007d8 	.word	0x200007d8
- 8002930:	200007e8 	.word	0x200007e8
- 8002934:	20000791 	.word	0x20000791
- 8002938:	200007a2 	.word	0x200007a2
+ 800292c:	200007d4 	.word	0x200007d4
+ 8002930:	200007e4 	.word	0x200007e4
+ 8002934:	2000078d 	.word	0x2000078d
+ 8002938:	2000079e 	.word	0x2000079e
  800293c:	08005eca 	.word	0x08005eca
- 8002940:	2000085a 	.word	0x2000085a
- 8002944:	20000789 	.word	0x20000789
+ 8002940:	20000856 	.word	0x20000856
+ 8002944:	20000785 	.word	0x20000785
  8002948:	08006097 	.word	0x08006097
  800294c:	080060a0 	.word	0x080060a0
  8002950:	08005e75 	.word	0x08005e75
  8002954:	080060ac 	.word	0x080060ac
  8002958:	200000f4 	.word	0x200000f4
  800295c:	080060af 	.word	0x080060af
- 8002960:	2000079c 	.word	0x2000079c
+ 8002960:	20000798 	.word	0x20000798
  8002964:	0800613e 	.word	0x0800613e
  8002968:	080060b8 	.word	0x080060b8
  800296c:	080058d8 	.word	0x080058d8
  8002970:	080060c1 	.word	0x080060c1
  8002974:	080060cf 	.word	0x080060cf
  8002978:	080060e4 	.word	0x080060e4
- 800297c:	2000078c 	.word	0x2000078c
+ 800297c:	20000788 	.word	0x20000788
  8002980:	080060f9 	.word	0x080060f9
  8002984:	08006109 	.word	0x08006109
  8002988:	08006121 	.word	0x08006121
@@ -6226,8 +6226,8 @@ void OUT_ON()
  80029a4:	4770      	bx	lr
  80029a6:	bf00      	nop
  80029a8:	40010c00 	.word	0x40010c00
- 80029ac:	200007a2 	.word	0x200007a2
- 80029b0:	200007a8 	.word	0x200007a8
+ 80029ac:	2000079e 	.word	0x2000079e
+ 80029b0:	200007a4 	.word	0x200007a4
  80029b4:	40010800 	.word	0x40010800
 
 080029b8 <OUTStateAfterPowerUpFunction>:
@@ -6335,11 +6335,11 @@ void OUT_ON()
     		OUT_OFF();
  8002a5a:	f7ff fdc3 	bl	80025e4 <OUT_OFF>
  8002a5e:	e7f3      	b.n	8002a48 <MenuPowerSupply+0x64>
- 8002a60:	200007a0 	.word	0x200007a0
- 8002a64:	2000086e 	.word	0x2000086e
- 8002a68:	200007a2 	.word	0x200007a2
+ 8002a60:	2000079c 	.word	0x2000079c
+ 8002a64:	2000086c 	.word	0x2000086c
+ 8002a68:	2000079e 	.word	0x2000079e
  8002a6c:	08006134 	.word	0x08006134
- 8002a70:	2000085a 	.word	0x2000085a
+ 8002a70:	20000856 	.word	0x20000856
  8002a74:	08005ecd 	.word	0x08005ecd
  8002a78:	08006138 	.word	0x08006138
  8002a7c:	0800613d 	.word	0x0800613d
@@ -6395,10 +6395,10 @@ void OUT_ON()
  8002ad6:	3b01      	subs	r3, #1
  8002ad8:	e7dd      	b.n	8002a96 <MenuCalibration_CURRENT_Out+0x16>
  8002ada:	bf00      	nop
- 8002adc:	200007a0 	.word	0x200007a0
+ 8002adc:	2000079c 	.word	0x2000079c
  8002ae0:	20000004 	.word	0x20000004
  8002ae4:	08006071 	.word	0x08006071
- 8002ae8:	2000085a 	.word	0x2000085a
+ 8002ae8:	20000856 	.word	0x20000856
  8002aec:	08006088 	.word	0x08006088
 
 08002af0 <MenuCalibration_VoltagePS>:
@@ -6452,7 +6452,7 @@ void OUT_ON()
  8002b46:	6aa3      	ldr	r3, [r4, #40]	; 0x28
  8002b48:	3b01      	subs	r3, #1
  8002b4a:	e7dc      	b.n	8002b06 <MenuCalibration_VoltagePS+0x16>
- 8002b4c:	200007a0 	.word	0x200007a0
+ 8002b4c:	2000079c 	.word	0x2000079c
  8002b50:	20000004 	.word	0x20000004
  8002b54:	08006071 	.word	0x08006071
  8002b58:	20000874 	.word	0x20000874
@@ -6509,10 +6509,10 @@ void OUT_ON()
  8002bb6:	6b23      	ldr	r3, [r4, #48]	; 0x30
  8002bb8:	3b01      	subs	r3, #1
  8002bba:	e7dc      	b.n	8002b76 <MenuCalibration_VoltageOut+0x16>
- 8002bbc:	200007a0 	.word	0x200007a0
+ 8002bbc:	2000079c 	.word	0x2000079c
  8002bc0:	20000004 	.word	0x20000004
  8002bc4:	08006071 	.word	0x08006071
- 8002bc8:	2000086e 	.word	0x2000086e
+ 8002bc8:	2000086c 	.word	0x2000086c
  8002bcc:	08006134 	.word	0x08006134
 
 08002bd0 <MenuCalibration_VoltageIn>:
@@ -6566,10 +6566,10 @@ void OUT_ON()
  8002c26:	6ba3      	ldr	r3, [r4, #56]	; 0x38
  8002c28:	3b01      	subs	r3, #1
  8002c2a:	e7dc      	b.n	8002be6 <MenuCalibration_VoltageIn+0x16>
- 8002c2c:	200007a0 	.word	0x200007a0
+ 8002c2c:	2000079c 	.word	0x2000079c
  8002c30:	20000004 	.word	0x20000004
  8002c34:	08006071 	.word	0x08006071
- 8002c38:	20000858 	.word	0x20000858
+ 8002c38:	20000854 	.word	0x20000854
  8002c3c:	08006134 	.word	0x08006134
 
 08002c40 <MenuCalibration_Resist_Comp_5V1A>:
@@ -6683,10 +6683,10 @@ void OUT_ON()
  8002ce6:	230a      	movs	r3, #10
  8002ce8:	e7f4      	b.n	8002cd4 <MenuCalibration_Resist_Comp_5V1A+0x94>
  8002cea:	bf00      	nop
- 8002cec:	200007a0 	.word	0x200007a0
+ 8002cec:	2000079c 	.word	0x2000079c
  8002cf0:	20000278 	.word	0x20000278
- 8002cf4:	200002b6 	.word	0x200002b6
- 8002cf8:	2000085a 	.word	0x2000085a
+ 8002cf4:	200002b2 	.word	0x200002b2
+ 8002cf8:	20000856 	.word	0x20000856
  8002cfc:	08005eca 	.word	0x08005eca
  8002d00:	20000004 	.word	0x20000004
  8002d04:	08006141 	.word	0x08006141
@@ -6791,14 +6791,14 @@ void OUT_ON()
 }
  8002dbe:	e8bd 81f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
  8002dc2:	bf00      	nop
- 8002dc4:	200007a0 	.word	0x200007a0
- 8002dc8:	200007a2 	.word	0x200007a2
- 8002dcc:	2000085a 	.word	0x2000085a
+ 8002dc4:	2000079c 	.word	0x2000079c
+ 8002dc8:	2000079e 	.word	0x2000079e
+ 8002dcc:	20000856 	.word	0x20000856
  8002dd0:	20000874 	.word	0x20000874
  8002dd4:	08006134 	.word	0x08006134
  8002dd8:	0800614c 	.word	0x0800614c
  8002ddc:	08006138 	.word	0x08006138
- 8002de0:	2000086e 	.word	0x2000086e
+ 8002de0:	2000086c 	.word	0x2000086c
  8002de4:	08005ecd 	.word	0x08005ecd
  8002de8:	0800613d 	.word	0x0800613d
 
@@ -7127,19 +7127,19 @@ void OUT_ON()
  8003062:	4608      	mov	r0, r1
  8003064:	e74f      	b.n	8002f06 <MenuChargeCC_CV+0x10a>
  8003066:	bf00      	nop
- 8003068:	200007a1 	.word	0x200007a1
- 800306c:	200007a0 	.word	0x200007a0
- 8003070:	2000078b 	.word	0x2000078b
- 8003074:	2000078c 	.word	0x2000078c
+ 8003068:	2000079d 	.word	0x2000079d
+ 800306c:	2000079c 	.word	0x2000079c
+ 8003070:	20000787 	.word	0x20000787
+ 8003074:	20000788 	.word	0x20000788
  8003078:	20000874 	.word	0x20000874
  800307c:	20000154 	.word	0x20000154
  8003080:	08006152 	.word	0x08006152
  8003084:	08006163 	.word	0x08006163
- 8003088:	2000077c 	.word	0x2000077c
+ 8003088:	20000778 	.word	0x20000778
  800308c:	20000a18 	.word	0x20000a18
- 8003090:	2000086e 	.word	0x2000086e
- 8003094:	20000791 	.word	0x20000791
- 8003098:	200007a2 	.word	0x200007a2
+ 8003090:	2000086c 	.word	0x2000086c
+ 8003094:	2000078d 	.word	0x2000078d
+ 8003098:	2000079e 	.word	0x2000079e
  800309c:	08005eca 	.word	0x08005eca
  80030a0:	08005eb7 	.word	0x08005eb7
  80030a4:	0800617c 	.word	0x0800617c
@@ -7153,12 +7153,12 @@ void OUT_ON()
  80030c4:	080060e4 	.word	0x080060e4
  80030c8:	080060f9 	.word	0x080060f9
  80030cc:	08006109 	.word	0x08006109
- 80030d0:	20000798 	.word	0x20000798
+ 80030d0:	20000794 	.word	0x20000794
  80030d4:	08006121 	.word	0x08006121
- 80030d8:	2000085a 	.word	0x2000085a
+ 80030d8:	20000856 	.word	0x20000856
  80030dc:	08006174 	.word	0x08006174
- 80030e0:	20000794 	.word	0x20000794
- 80030e4:	20000789 	.word	0x20000789
+ 80030e0:	20000790 	.word	0x20000790
+ 80030e4:	20000785 	.word	0x20000785
 
 080030e8 <MenuChargeAdapt>:
 	EnterInMenu_Status = 1;
@@ -7536,23 +7536,23 @@ void OUT_ON()
  80033da:	2101      	movs	r1, #1
  80033dc:	4608      	mov	r0, r1
  80033de:	e702      	b.n	80031e6 <MenuChargeAdapt+0xfe>
- 80033e0:	200007a1 	.word	0x200007a1
- 80033e4:	200007a0 	.word	0x200007a0
- 80033e8:	2000078b 	.word	0x2000078b
- 80033ec:	2000078c 	.word	0x2000078c
+ 80033e0:	2000079d 	.word	0x2000079d
+ 80033e4:	2000079c 	.word	0x2000079c
+ 80033e8:	20000787 	.word	0x20000787
+ 80033ec:	20000788 	.word	0x20000788
  80033f0:	20000874 	.word	0x20000874
  80033f4:	20000154 	.word	0x20000154
  80033f8:	08006152 	.word	0x08006152
  80033fc:	08006163 	.word	0x08006163
- 8003400:	2000077c 	.word	0x2000077c
+ 8003400:	20000778 	.word	0x20000778
  8003404:	20000a18 	.word	0x20000a18
- 8003408:	20000791 	.word	0x20000791
- 800340c:	200007a2 	.word	0x200007a2
+ 8003408:	2000078d 	.word	0x2000078d
+ 800340c:	2000079e 	.word	0x2000079e
  8003410:	08005eca 	.word	0x08005eca
  8003414:	08005e75 	.word	0x08005e75
  8003418:	0800617c 	.word	0x0800617c
  800341c:	0800617f 	.word	0x0800617f
- 8003420:	2000086e 	.word	0x2000086e
+ 8003420:	2000086c 	.word	0x2000086c
  8003424:	08005fd9 	.word	0x08005fd9
  8003428:	08006187 	.word	0x08006187
  800342c:	080060b8 	.word	0x080060b8
@@ -7562,12 +7562,12 @@ void OUT_ON()
  800343c:	080060e4 	.word	0x080060e4
  8003440:	080060f9 	.word	0x080060f9
  8003444:	08006109 	.word	0x08006109
- 8003448:	20000798 	.word	0x20000798
+ 8003448:	20000794 	.word	0x20000794
  800344c:	08006121 	.word	0x08006121
- 8003450:	2000085a 	.word	0x2000085a
+ 8003450:	20000856 	.word	0x20000856
  8003454:	08006097 	.word	0x08006097
- 8003458:	20000794 	.word	0x20000794
- 800345c:	20000789 	.word	0x20000789
+ 8003458:	20000790 	.word	0x20000790
+ 800345c:	20000785 	.word	0x20000785
 
 08003460 <charge1>:
 {
@@ -7602,8 +7602,8 @@ void OUT_ON()
 }
  8003490:	bd08      	pop	{r3, pc}
  8003492:	bf00      	nop
- 8003494:	2000078a 	.word	0x2000078a
- 8003498:	200007cc 	.word	0x200007cc
+ 8003494:	20000786 	.word	0x20000786
+ 8003498:	200007c8 	.word	0x200007c8
  800349c:	080058d8 	.word	0x080058d8
  80034a0:	08006090 	.word	0x08006090
 
@@ -7927,32 +7927,32 @@ void OUT_ON()
  8003700:	f7fe f9d8 	bl	8001ab4 <PrintToLCD>
  8003704:	e036      	b.n	8003774 <MenuTraining_new+0x2d0>
  8003706:	bf00      	nop
- 8003708:	200007a0 	.word	0x200007a0
- 800370c:	20000798 	.word	0x20000798
- 8003710:	20000780 	.word	0x20000780
+ 8003708:	2000079c 	.word	0x2000079c
+ 800370c:	20000794 	.word	0x20000794
+ 8003710:	2000077c 	.word	0x2000077c
  8003714:	20000874 	.word	0x20000874
  8003718:	20000154 	.word	0x20000154
  800371c:	08006152 	.word	0x08006152
  8003720:	08006163 	.word	0x08006163
- 8003724:	2000079c 	.word	0x2000079c
+ 8003724:	20000798 	.word	0x20000798
  8003728:	20000270 	.word	0x20000270
  800372c:	0800618a 	.word	0x0800618a
- 8003730:	2000085a 	.word	0x2000085a
- 8003734:	2000086e 	.word	0x2000086e
- 8003738:	200007cc 	.word	0x200007cc
+ 8003730:	20000856 	.word	0x20000856
+ 8003734:	2000086c 	.word	0x2000086c
+ 8003738:	200007c8 	.word	0x200007c8
  800373c:	00058c4f 	.word	0x00058c4f
  8003740:	20000a18 	.word	0x20000a18
  8003744:	200000f4 	.word	0x200000f4
- 8003748:	20000791 	.word	0x20000791
+ 8003748:	2000078d 	.word	0x2000078d
  800374c:	08005eca 	.word	0x08005eca
  8003750:	08006174 	.word	0x08006174
- 8003754:	200007a8 	.word	0x200007a8
+ 8003754:	200007a4 	.word	0x200007a4
  8003758:	08005a50 	.word	0x08005a50
  800375c:	08005eb7 	.word	0x08005eb7
- 8003760:	2000078b 	.word	0x2000078b
- 8003764:	20000794 	.word	0x20000794
- 8003768:	2000078c 	.word	0x2000078c
- 800376c:	2000077c 	.word	0x2000077c
+ 8003760:	20000787 	.word	0x20000787
+ 8003764:	20000790 	.word	0x20000790
+ 8003768:	20000788 	.word	0x20000788
+ 800376c:	20000778 	.word	0x20000778
 			if (CountShow<0) CountShow=MAX_SCREENS__MENU_TRAINING-1;
  8003770:	2304      	movs	r3, #4
  8003772:	7023      	strb	r3, [r4, #0]
@@ -8143,7 +8143,7 @@ void OUT_ON()
  8003910:	080060ac 	.word	0x080060ac
  8003914:	200000f4 	.word	0x200000f4
  8003918:	080060b8 	.word	0x080060b8
- 800391c:	2000079c 	.word	0x2000079c
+ 800391c:	20000798 	.word	0x20000798
  8003920:	080058d8 	.word	0x080058d8
  8003924:	080060cf 	.word	0x080060cf
  8003928:	080060e4 	.word	0x080060e4
@@ -8152,7 +8152,7 @@ void OUT_ON()
  8003934:	08006109 	.word	0x08006109
  8003938:	08006121 	.word	0x08006121
  800393c:	080061ce 	.word	0x080061ce
- 8003940:	200007cc 	.word	0x200007cc
+ 8003940:	200007c8 	.word	0x200007c8
  8003944:	080061a5 	.word	0x080061a5
 
 08003948 <MenuSwing>:
@@ -8390,22 +8390,22 @@ void OUT_ON()
 }
  8003afc:	bdf8      	pop	{r3, r4, r5, r6, r7, pc}
  8003afe:	bf00      	nop
- 8003b00:	200007a0 	.word	0x200007a0
- 8003b04:	200007a1 	.word	0x200007a1
- 8003b08:	200007d0 	.word	0x200007d0
+ 8003b00:	2000079c 	.word	0x2000079c
+ 8003b04:	2000079d 	.word	0x2000079d
+ 8003b08:	200007cc 	.word	0x200007cc
  8003b0c:	20000154 	.word	0x20000154
- 8003b10:	2000086e 	.word	0x2000086e
- 8003b14:	200007cc 	.word	0x200007cc
- 8003b18:	20000791 	.word	0x20000791
+ 8003b10:	2000086c 	.word	0x2000086c
+ 8003b14:	200007c8 	.word	0x200007c8
+ 8003b18:	2000078d 	.word	0x2000078d
  8003b1c:	08005eca 	.word	0x08005eca
- 8003b20:	2000085a 	.word	0x2000085a
+ 8003b20:	20000856 	.word	0x20000856
  8003b24:	08006174 	.word	0x08006174
- 8003b28:	200007a8 	.word	0x200007a8
+ 8003b28:	200007a4 	.word	0x200007a4
  8003b2c:	08005a50 	.word	0x08005a50
  8003b30:	08005eb7 	.word	0x08005eb7
  8003b34:	08006204 	.word	0x08006204
  8003b38:	080061f0 	.word	0x080061f0
- 8003b3c:	20000798 	.word	0x20000798
+ 8003b3c:	20000794 	.word	0x20000794
 
 08003b40 <MenuCheckingCapacity>:
 {
@@ -8748,31 +8748,31 @@ void OUT_ON()
 					LcdOutbyNumber(2,1);//discharge
  8003dc2:	f7fd fe1f 	bl	8001a04 <LcdOutbyNumber>
  8003dc6:	e082      	b.n	8003ece <MenuCheckingCapacity+0x38e>
- 8003dc8:	200007a0 	.word	0x200007a0
- 8003dcc:	2000078c 	.word	0x2000078c
- 8003dd0:	2000077c 	.word	0x2000077c
- 8003dd4:	20000780 	.word	0x20000780
- 8003dd8:	20000790 	.word	0x20000790
+ 8003dc8:	2000079c 	.word	0x2000079c
+ 8003dcc:	20000788 	.word	0x20000788
+ 8003dd0:	20000778 	.word	0x20000778
+ 8003dd4:	2000077c 	.word	0x2000077c
+ 8003dd8:	2000078c 	.word	0x2000078c
  8003ddc:	20000874 	.word	0x20000874
  8003de0:	20000154 	.word	0x20000154
  8003de4:	08006152 	.word	0x08006152
  8003de8:	08006163 	.word	0x08006163
- 8003dec:	20000794 	.word	0x20000794
- 8003df0:	2000079c 	.word	0x2000079c
+ 8003dec:	20000790 	.word	0x20000790
+ 8003df0:	20000798 	.word	0x20000798
  8003df4:	20000270 	.word	0x20000270
  8003df8:	0800618a 	.word	0x0800618a
- 8003dfc:	2000086e 	.word	0x2000086e
- 8003e00:	200007cc 	.word	0x200007cc
+ 8003dfc:	2000086c 	.word	0x2000086c
+ 8003e00:	200007c8 	.word	0x200007c8
  8003e04:	00058c4f 	.word	0x00058c4f
  8003e08:	200000f4 	.word	0x200000f4
  8003e0c:	20000a18 	.word	0x20000a18
- 8003e10:	20000791 	.word	0x20000791
+ 8003e10:	2000078d 	.word	0x2000078d
  8003e14:	08005eca 	.word	0x08005eca
  8003e18:	08006174 	.word	0x08006174
- 8003e1c:	200007a8 	.word	0x200007a8
- 8003e20:	2000085a 	.word	0x2000085a
- 8003e24:	2000078b 	.word	0x2000078b
- 8003e28:	20000798 	.word	0x20000798
+ 8003e1c:	200007a4 	.word	0x200007a4
+ 8003e20:	20000856 	.word	0x20000856
+ 8003e24:	20000787 	.word	0x20000787
+ 8003e28:	20000794 	.word	0x20000794
 	if (CheckingCapacityCounter<=3)
  8003e2c:	f994 3000 	ldrsb.w	r3, [r4]
  8003e30:	2b03      	cmp	r3, #3
@@ -9093,22 +9093,22 @@ void OUT_ON()
  80040de:	2002      	movs	r0, #2
  80040e0:	e6e4      	b.n	8003eac <MenuCheckingCapacity+0x36c>
  80040e2:	bf00      	nop
- 80040e4:	20000791 	.word	0x20000791
- 80040e8:	2000086e 	.word	0x2000086e
+ 80040e4:	2000078d 	.word	0x2000078d
+ 80040e8:	2000086c 	.word	0x2000086c
  80040ec:	08005eca 	.word	0x08005eca
- 80040f0:	2000085a 	.word	0x2000085a
+ 80040f0:	20000856 	.word	0x20000856
  80040f4:	08006174 	.word	0x08006174
- 80040f8:	200007a8 	.word	0x200007a8
+ 80040f8:	200007a4 	.word	0x200007a4
  80040fc:	08005a50 	.word	0x08005a50
  8004100:	08005eb7 	.word	0x08005eb7
- 8004104:	200007cc 	.word	0x200007cc
+ 8004104:	200007c8 	.word	0x200007c8
  8004108:	080061a5 	.word	0x080061a5
  800410c:	080058d8 	.word	0x080058d8
  8004110:	080060cf 	.word	0x080060cf
  8004114:	080060e4 	.word	0x080060e4
  8004118:	080060f9 	.word	0x080060f9
  800411c:	080061b6 	.word	0x080061b6
- 8004120:	20000794 	.word	0x20000794
+ 8004120:	20000790 	.word	0x20000790
  8004124:	08006109 	.word	0x08006109
  8004128:	08006121 	.word	0x08006121
  800412c:	080061ce 	.word	0x080061ce
@@ -9300,7 +9300,7 @@ void OUT_ON()
 		PrintToLCD("I(l) ");
  800429e:	485f      	ldr	r0, [pc, #380]	; (800441c <MenuDIAGNOSTIC+0x2e0>)
  80042a0:	f7fd fc08 	bl	8001ab4 <PrintToLCD>
-		PrintToLCD(itoa(Current_load));
+		PrintToLCD(itoa(Current_x1));
  80042a4:	4b5e      	ldr	r3, [pc, #376]	; (8004420 <MenuDIAGNOSTIC+0x2e4>)
  80042a6:	8818      	ldrh	r0, [r3, #0]
  80042a8:	b200      	sxth	r0, r0
@@ -9442,27 +9442,27 @@ void OUT_ON()
  80043d0:	b006      	add	sp, #24
  80043d2:	e8bd 81f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
  80043d6:	bf00      	nop
- 80043d8:	200007a0 	.word	0x200007a0
- 80043dc:	20000792 	.word	0x20000792
+ 80043d8:	2000079c 	.word	0x2000079c
+ 80043dc:	2000078e 	.word	0x2000078e
  80043e0:	080061f8 	.word	0x080061f8
- 80043e4:	20000858 	.word	0x20000858
+ 80043e4:	20000854 	.word	0x20000854
  80043e8:	080061fd 	.word	0x080061fd
- 80043ec:	2000086c 	.word	0x2000086c
+ 80043ec:	2000086a 	.word	0x2000086a
  80043f0:	08006070 	.word	0x08006070
  80043f4:	08006202 	.word	0x08006202
  80043f8:	20000874 	.word	0x20000874
  80043fc:	08005eca 	.word	0x08005eca
- 8004400:	2000085c 	.word	0x2000085c
+ 8004400:	2000085a 	.word	0x2000085a
  8004404:	0800606e 	.word	0x0800606e
  8004408:	08006207 	.word	0x08006207
- 800440c:	2000086e 	.word	0x2000086e
+ 800440c:	2000086c 	.word	0x2000086c
  8004410:	0800620d 	.word	0x0800620d
- 8004414:	2000085a 	.word	0x2000085a
+ 8004414:	20000856 	.word	0x20000856
  8004418:	08006213 	.word	0x08006213
  800441c:	08006217 	.word	0x08006217
- 8004420:	200002b4 	.word	0x200002b4
+ 8004420:	20000858 	.word	0x20000858
  8004424:	0800606d 	.word	0x0800606d
- 8004428:	200002b6 	.word	0x200002b6
+ 8004428:	200002b2 	.word	0x200002b2
  800442c:	20000004 	.word	0x20000004
  8004430:	0800621d 	.word	0x0800621d
  8004434:	08006220 	.word	0x08006220
@@ -9471,7 +9471,7 @@ void OUT_ON()
  8004440:	0800622d 	.word	0x0800622d
  8004444:	08006231 	.word	0x08006231
  8004448:	08006238 	.word	0x08006238
- 800444c:	200007e8 	.word	0x200007e8
+ 800444c:	200007e4 	.word	0x200007e4
  8004450:	0800606c 	.word	0x0800606c
  8004454:	08006240 	.word	0x08006240
  8004458:	20000870 	.word	0x20000870
@@ -9627,7 +9627,7 @@ void adc_func()
  8004536:	291f      	cmp	r1, #31
  8004538:	dd09      	ble.n	800454e <adc_func+0xee>
 	{
-		Current_Out = SumI1/NUM_READ;
+		Current_x50 = SumI1/NUM_READ;
  800453a:	6819      	ldr	r1, [r3, #0]
  800453c:	2900      	cmp	r1, #0
  800453e:	bfb8      	it	lt
@@ -9677,7 +9677,7 @@ void adc_func()
  8004588:	291f      	cmp	r1, #31
  800458a:	dd0a      	ble.n	80045a2 <adc_func+0x142>
 	{
-		Current_load = SumI2/NUM_READ;
+		Current_x1 = SumI2/NUM_READ;
  800458c:	6819      	ldr	r1, [r3, #0]
  800458e:	4837      	ldr	r0, [pc, #220]	; (800466c <adc_func+0x20c>)
  8004590:	2900      	cmp	r1, #0
@@ -9691,7 +9691,7 @@ void adc_func()
 		SumI2 = 0;
  80045a0:	6019      	str	r1, [r3, #0]
 	}
-	Current = (Current_Out-CalibrationData.Calibration0ValueForCurrent)/1 ;//2745;
+	Current = (Current_x50-CalibrationData.Calibration0ValueForCurrent)/1 ;//2745;
  80045a2:	8833      	ldrh	r3, [r6, #0]
  80045a4:	68aa      	ldr	r2, [r5, #8]
  80045a6:	4e32      	ldr	r6, [pc, #200]	; (8004670 <adc_func+0x210>)
@@ -9792,26 +9792,26 @@ void adc_func()
  8004636:	b004      	add	sp, #16
  8004638:	bd70      	pop	{r4, r5, r6, pc}
  800463a:	bf00      	nop
- 800463c:	2000085c 	.word	0x2000085c
+ 800463c:	2000085a 	.word	0x2000085a
  8004640:	20000004 	.word	0x20000004
- 8004644:	2000086c 	.word	0x2000086c
- 8004648:	200007bc 	.word	0x200007bc
- 800464c:	200007c0 	.word	0x200007c0
+ 8004644:	2000086a 	.word	0x2000086a
+ 8004648:	200007b8 	.word	0x200007b8
+ 800464c:	200007bc 	.word	0x200007bc
  8004650:	20000874 	.word	0x20000874
- 8004654:	20000858 	.word	0x20000858
- 8004658:	200002b2 	.word	0x200002b2
- 800465c:	200007ac 	.word	0x200007ac
- 8004660:	200007b0 	.word	0x200007b0
- 8004664:	200007b4 	.word	0x200007b4
- 8004668:	200007b8 	.word	0x200007b8
- 800466c:	200002b4 	.word	0x200002b4
- 8004670:	2000085a 	.word	0x2000085a
- 8004674:	200007c4 	.word	0x200007c4
- 8004678:	200007c8 	.word	0x200007c8
- 800467c:	200007dc 	.word	0x200007dc
- 8004680:	200002b6 	.word	0x200002b6
+ 8004654:	20000854 	.word	0x20000854
+ 8004658:	200007e8 	.word	0x200007e8
+ 800465c:	200007a8 	.word	0x200007a8
+ 8004660:	200007ac 	.word	0x200007ac
+ 8004664:	200007b0 	.word	0x200007b0
+ 8004668:	200007b4 	.word	0x200007b4
+ 800466c:	20000858 	.word	0x20000858
+ 8004670:	20000856 	.word	0x20000856
+ 8004674:	200007c0 	.word	0x200007c0
+ 8004678:	200007c4 	.word	0x200007c4
+ 800467c:	200007d8 	.word	0x200007d8
+ 8004680:	200002b2 	.word	0x200002b2
  8004684:	ffffd8f0 	.word	0xffffd8f0
- 8004688:	2000086e 	.word	0x2000086e
+ 8004688:	2000086c 	.word	0x2000086c
 
 0800468c <SysTick_Callback>:
 {
@@ -9964,20 +9964,20 @@ void adc_func()
  8004780:	802b      	strh	r3, [r5, #0]
 }
  8004782:	bdf8      	pop	{r3, r4, r5, r6, r7, pc}
- 8004784:	200007cc 	.word	0x200007cc
+ 8004784:	200007c8 	.word	0x200007c8
  8004788:	200002b0 	.word	0x200002b0
  800478c:	200002ae 	.word	0x200002ae
  8004790:	200002ac 	.word	0x200002ac
- 8004794:	2000085a 	.word	0x2000085a
- 8004798:	20000780 	.word	0x20000780
- 800479c:	2000077c 	.word	0x2000077c
- 80047a0:	2000078b 	.word	0x2000078b
- 80047a4:	2000078c 	.word	0x2000078c
- 80047a8:	20000794 	.word	0x20000794
- 80047ac:	20000798 	.word	0x20000798
- 80047b0:	200007a9 	.word	0x200007a9
- 80047b4:	200007d0 	.word	0x200007d0
- 80047b8:	200007e8 	.word	0x200007e8
+ 8004794:	20000856 	.word	0x20000856
+ 8004798:	2000077c 	.word	0x2000077c
+ 800479c:	20000778 	.word	0x20000778
+ 80047a0:	20000787 	.word	0x20000787
+ 80047a4:	20000788 	.word	0x20000788
+ 80047a8:	20000790 	.word	0x20000790
+ 80047ac:	20000794 	.word	0x20000794
+ 80047b0:	200007a5 	.word	0x200007a5
+ 80047b4:	200007cc 	.word	0x200007cc
+ 80047b8:	200007e4 	.word	0x200007e4
  80047bc:	40010800 	.word	0x40010800
  80047c0:	40010c00 	.word	0x40010c00
 
@@ -10575,7 +10575,7 @@ __STATIC_INLINE void LL_ADC_StartCalibration(ADC_TypeDef *ADCx)
  8004b84:	40013800 	.word	0x40013800
  8004b88:	40020008 	.word	0x40020008
  8004b8c:	4001244c 	.word	0x4001244c
- 8004b90:	2000085c 	.word	0x2000085c
+ 8004b90:	2000085a 	.word	0x2000085a
  8004b94:	02300001 	.word	0x02300001
  8004b98:	02600002 	.word	0x02600002
  8004b9c:	02900003 	.word	0x02900003
@@ -11020,7 +11020,7 @@ __STATIC_INLINE uint32_t SysTick_Config(uint32_t ticks)
  8004eb4:	08006260 	.word	0x08006260
  8004eb8:	08006271 	.word	0x08006271
  8004ebc:	200000f4 	.word	0x200000f4
- 8004ec0:	20000784 	.word	0x20000784
+ 8004ec0:	20000780 	.word	0x20000780
  8004ec4:	20000154 	.word	0x20000154
  8004ec8:	20000274 	.word	0x20000274
  8004ecc:	20000a18 	.word	0x20000a18
@@ -11028,19 +11028,19 @@ __STATIC_INLINE uint32_t SysTick_Config(uint32_t ticks)
  8004ed4:	20000a14 	.word	0x20000a14
  8004ed8:	08001c99 	.word	0x08001c99
  8004edc:	080069b4 	.word	0x080069b4
- 8004ee0:	20000789 	.word	0x20000789
+ 8004ee0:	20000785 	.word	0x20000785
  8004ee4:	08006a0c 	.word	0x08006a0c
  8004ee8:	08006a64 	.word	0x08006a64
  8004eec:	08006abc 	.word	0x08006abc
  8004ef0:	08006b14 	.word	0x08006b14
  8004ef4:	08006bc4 	.word	0x08006bc4
  8004ef8:	08006c1c 	.word	0x08006c1c
- 8004efc:	200007a1 	.word	0x200007a1
- 8004f00:	20000791 	.word	0x20000791
- 8004f04:	20000780 	.word	0x20000780
- 8004f08:	20000798 	.word	0x20000798
- 8004f0c:	2000079c 	.word	0x2000079c
- 8004f10:	2000078a 	.word	0x2000078a
+ 8004efc:	2000079d 	.word	0x2000079d
+ 8004f00:	2000078d 	.word	0x2000078d
+ 8004f04:	2000077c 	.word	0x2000077c
+ 8004f08:	20000794 	.word	0x20000794
+ 8004f0c:	20000798 	.word	0x20000798
+ 8004f10:	20000786 	.word	0x20000786
  8004f14:	08006b40 	.word	0x08006b40
  8004f18:	08006c74 	.word	0x08006c74
  8004f1c:	08006ccc 	.word	0x08006ccc
@@ -11049,7 +11049,7 @@ __STATIC_INLINE uint32_t SysTick_Config(uint32_t ticks)
  8004f28:	08006330 	.word	0x08006330
  8004f2c:	08006438 	.word	0x08006438
  8004f30:	080063e0 	.word	0x080063e0
- 8004f34:	200007a0 	.word	0x200007a0
+ 8004f34:	2000079c 	.word	0x2000079c
 	else if (Menu_GetCurrentMenu() == &Menu_10_7_1)
  8004f38:	f7fc fc10 	bl	800175c <Menu_GetCurrentMenu>
  8004f3c:	4b3f      	ldr	r3, [pc, #252]	; (800503c <main+0x7f8>)
@@ -11319,7 +11319,7 @@ void USART1_IRQHandler(void)
 }
  80050de:	4770      	bx	lr
  80050e0:	40013800 	.word	0x40013800
- 80050e4:	200002b8 	.word	0x200002b8
+ 80050e4:	200002b4 	.word	0x200002b4
 
 080050e8 <SystemInit>:
 
@@ -11515,7 +11515,7 @@ void USART1_IRQHandler(void)
  800520c:	e7a6      	b.n	800515c <printToBufferUART1+0x10>
  800520e:	bf00      	nop
  8005210:	40013800 	.word	0x40013800
- 8005214:	200002b8 	.word	0x200002b8
+ 8005214:	200002b4 	.word	0x200002b4
 
 08005218 <printToBufferWithoutEndUART1>:
 	USART1->CR1 &= ~USART_CR1_TXEIE;  // Interrupt Disable
@@ -11585,7 +11585,7 @@ void USART1_IRQHandler(void)
  8005288:	e7ce      	b.n	8005228 <printToBufferWithoutEndUART1+0x10>
  800528a:	bf00      	nop
  800528c:	40013800 	.word	0x40013800
- 8005290:	200002b8 	.word	0x200002b8
+ 8005290:	200002b4 	.word	0x200002b4
 
 08005294 <printToBufferUART1D>:
 
@@ -11753,7 +11753,7 @@ void printToBufferUART1D(volatile char* str, volatile int32_t value, volatile ui
  80053c6:	f8a3 245a 	strhcc.w	r2, [r3, #1114]	; 0x45a
  80053ca:	e77c      	b.n	80052c6 <printToBufferUART1D+0x32>
  80053cc:	40013800 	.word	0x40013800
- 80053d0:	200002b8 	.word	0x200002b8
+ 80053d0:	200002b4 	.word	0x200002b4
 
 080053d4 <Reset_Handler>:
   .weak Reset_Handler
