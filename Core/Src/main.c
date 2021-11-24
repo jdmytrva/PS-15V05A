@@ -187,8 +187,17 @@ void MenuPowerSupply(Key_Pressed_t key) //PowerSupply
 	PrintToLCD(itoa_koma(U_OUT,2));
 	PrintToLCD("V  ");
 	lcd_set_xy(7,0);
-	PrintToLCD(itoa(Current));
-	PrintToLCD("mA    ");
+
+	if (Current < 1000)
+	{
+		PrintToLCD(itoa(Current));
+		PrintToLCD("mA    ");
+	}
+	else
+	{
+		PrintToLCD(itoa_koma(Current/10,2));
+		PrintToLCD("A     ");
+	}
 
 	if (On_off == 0)
 	{
@@ -2169,7 +2178,7 @@ void adc_func()
 		SumI1 = 0;
 	}
 
-	It= (RegularConvData[3] * CalibrationData.CalibrationValueForCurrent_x1*10) / RegularConvData[7] ;//  Current A/10
+	It= (RegularConvData[3] * CalibrationData.CalibrationValueForCurrent_x1*100) / RegularConvData[7] ;//  Current A/10
 	It_m = middle_of_3Imax2(It);
 	SumI2 =SumI2 + RunningAverageI2(It_m);
 	SumI2Counter ++;
@@ -2179,7 +2188,8 @@ void adc_func()
 		SumI2Counter = 0;
 		SumI2 = 0;
 	}
-	Current = (Current_x50-CalibrationData.Calibration0ValueForCurrent)/1 ;//2745;
+	if (Current_x50 < 2000) Current = Current_x50;
+	else Current = Current_x1;
 
 
 	Ut = (RegularConvData[2] * CalibrationData.CalibrationValueForU_OUT) / RegularConvData[7];
