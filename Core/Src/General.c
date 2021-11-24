@@ -60,15 +60,15 @@ struct StructCalibrationValuetoSaveInFlash CalibrationDataFactory=
 		ADDRESS_FLASH_CALIBRATTION+4,
 		0,//Calibration0ValueForCurrent1
 		ADDRESS_FLASH_CALIBRATTION+8,
-		141,//CalibrationValueForCurrent x50
+		73,//CalibrationValueForCurrent x50
 		ADDRESS_FLASH_CALIBRATTION+12,
 		141,//CalibrationValueForCurrent x1
 		ADDRESS_FLASH_CALIBRATTION+16,
 		1109,//z
 		ADDRESS_FLASH_CALIBRATTION+20,
-		1109,//CalibrationValueForVoltage out
+		1332,//CalibrationValueForVoltage out
 		ADDRESS_FLASH_CALIBRATTION+24,
-		1109,//CalibrationValueForVoltage in
+		1332,//CalibrationValueForVoltage in
 		ADDRESS_FLASH_CALIBRATTION+28,
 		135,//ResistanceComp_Ishunt_Wires mOm 116
 		ADDRESS_FLASH_CALIBRATTION+32,
