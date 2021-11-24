@@ -67,7 +67,7 @@ static void MX_ADC1_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-char Version[] = "PS-15V05A v1.00 ";
+char Version[] = "PS-15V05A v1.01 ";
 
 Key_Pressed_t pressedKey = 0;
 volatile uint32_t  time_sec = 0;

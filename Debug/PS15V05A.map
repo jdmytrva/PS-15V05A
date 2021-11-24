@@ -2613,22 +2613,22 @@ LOAD c:/st/stm32cubeide_1.4.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
 LOAD c:/st/stm32cubeide_1.4.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libm.a
 LOAD c:/st/stm32cubeide_1.4.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7-m/nofp\libgcc.a
 
-.debug_info     0x0000000000000000    0x11aa1
+.debug_info     0x0000000000000000    0x11a8f
  .debug_info    0x0000000000000000     0x224f ./Core/Src/Eeprom.o
  .debug_info    0x000000000000224f     0x110f ./Core/Src/General.o
  .debug_info    0x000000000000335e      0xc6e ./Core/Src/Lib.o
  .debug_info    0x0000000000003fcc      0x2c9 ./Core/Src/MicroMenu2_1.o
  .debug_info    0x0000000000004295     0x11de ./Core/Src/hd44780_driver.o
- .debug_info    0x0000000000005473     0x80c2 ./Core/Src/main.o
- .debug_info    0x000000000000d535      0x958 ./Core/Src/stm32f1xx_it.o
- .debug_info    0x000000000000de8d      0x284 ./Core/Src/system_stm32f1xx.o
- .debug_info    0x000000000000e111      0xc6b ./Core/Src/usart.o
- .debug_info    0x000000000000ed7c       0x22 ./Core/Startup/startup_stm32f100c8tx.o
- .debug_info    0x000000000000ed9e      0xa13 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_adc.o
- .debug_info    0x000000000000f7b1      0x95c ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_gpio.o
- .debug_info    0x000000000001010d      0x6f4 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_rcc.o
- .debug_info    0x0000000000010801      0x86f ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_usart.o
- .debug_info    0x0000000000011070      0xa31 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_utils.o
+ .debug_info    0x0000000000005473     0x80b0 ./Core/Src/main.o
+ .debug_info    0x000000000000d523      0x958 ./Core/Src/stm32f1xx_it.o
+ .debug_info    0x000000000000de7b      0x284 ./Core/Src/system_stm32f1xx.o
+ .debug_info    0x000000000000e0ff      0xc6b ./Core/Src/usart.o
+ .debug_info    0x000000000000ed6a       0x22 ./Core/Startup/startup_stm32f100c8tx.o
+ .debug_info    0x000000000000ed8c      0xa13 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_adc.o
+ .debug_info    0x000000000000f79f      0x95c ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_gpio.o
+ .debug_info    0x00000000000100fb      0x6f4 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_rcc.o
+ .debug_info    0x00000000000107ef      0x86f ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_usart.o
+ .debug_info    0x000000000001105e      0xa31 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_utils.o
 
 .debug_abbrev   0x0000000000000000     0x2848
  .debug_abbrev  0x0000000000000000      0x3c3 ./Core/Src/Eeprom.o
