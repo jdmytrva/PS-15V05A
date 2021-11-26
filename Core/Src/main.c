@@ -1255,8 +1255,8 @@ void MenuDIAGNOSTIC(Key_Pressed_t key)
 	{
 		OFF();
 		lcd_set_xy(0,0);
-		PrintToLCD("Ups ");
-		PrintToLCD(itoa_koma(U_PS,2));
+		PrintToLCD("Uout ");
+		PrintToLCD(itoa_koma(U_OUT,2));
 		PrintToLCD("V ");
 		PrintToLCD(itoa((RegularConvData[3])));
 		PrintToLCD("      ");
@@ -1276,10 +1276,10 @@ void MenuDIAGNOSTIC(Key_Pressed_t key)
 		LOAD_OFF();
 		OUT_ON();
 		lcd_set_xy(0,0);
-		PrintToLCD("Iout ");
-		PrintToLCD(itoa(Current));
+		PrintToLCD("Ix50 ");
+		PrintToLCD(itoa(Current_x50));
 		PrintToLCD("mA ");
-		PrintToLCD(itoa((RegularConvData[1])));
+		PrintToLCD(itoa((RegularConvData[0])));
 		PrintToLCD("      ");
 	}
 	if(CountShow1 == 4)
@@ -1287,10 +1287,10 @@ void MenuDIAGNOSTIC(Key_Pressed_t key)
 		OUT_OFF();
 		LOAD_ON();
 		lcd_set_xy(0,0);
-		PrintToLCD("I(l) ");
+		PrintToLCD("Ix1 ");
 		PrintToLCD(itoa(Current_x1));
 		PrintToLCD("mA ");
-		PrintToLCD(itoa(RegularConvData[0]));
+		PrintToLCD(itoa(RegularConvData[3]));
 		PrintToLCD("       ");
 	}
 	if(CountShow1 == 5)
@@ -2085,7 +2085,7 @@ void SysTick_Callback()//1 mc
 		Count10mSecond = 0;
 		//f1 = SysTick->VAL;
 		adc_func();
-		//All_OUT_OFF_When_Power_OFF();
+		All_OUT_OFF_When_Power_OFF();
 		//f2 = SysTick->VAL;
 	}
 
@@ -2188,7 +2188,7 @@ void adc_func()
 		SumI2Counter = 0;
 		SumI2 = 0;
 	}
-	if (Current_x50 < 2000) Current = Current_x50;
+	if (Current_x50 < 1800) Current = Current_x50;
 	else Current = Current_x1;
 
 
