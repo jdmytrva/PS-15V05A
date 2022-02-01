@@ -67,7 +67,7 @@ static void MX_ADC1_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-char Version[] = "PS-15V05A v1.01 ";
+char Version[] = "PS-15V05A v1.03 ";
 
 Key_Pressed_t pressedKey = 0;
 volatile uint32_t  time_sec = 0;
@@ -2113,8 +2113,8 @@ void SysTick_Callback()//1 mc
 		if (time_sec%2==0) GPIOA->BSRR =  GPIO_BSRR_BS15;
 		else GPIOA->BSRR =  GPIO_BSRR_BR15;
 
-		if (Current >= 1000) FAN_ON();
-		if (Current < 1000) FAN_OFF();
+		if (Current >= 3000) FAN_ON();
+		if (Current < 3000) FAN_OFF();
 
 	}
 	Count10mSecond++;
@@ -2206,7 +2206,7 @@ void adc_func()
 		U_OUT_ForSetResistance = U_OUTtmp;
 		if (U_OUTtmp<3) U_OUTtmp = 0;
 
-		U_OUTtmp = U_OUTtmp - (int32_t)CalibrationData.ResistanceComp_Ishunt_Wires*Current/10000;
+		//U_OUTtmp = U_OUTtmp - (int32_t)CalibrationData.ResistanceComp_Ishunt_Wires*Current/10000;
 
 
 		if (U_OUTtmp<3)

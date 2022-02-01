@@ -72,7 +72,7 @@ main.c:2059:6:LOAD_ON	0	static
 main.c:2064:6:LOAD_OFF	0	static
 main.c:2068:6:LOAD_ON_OFF_Toggle	0	static
 main.c:2072:6:OUT_ON_OFF_Toggle	0	static
-main.c:2126:6:adc_func	40	static
+main.c:2126:6:adc_func	32	static
 main.c:2077:6:SysTick_Callback	24	static
 main.c:2436:6:SystemClock_Config	8	static
 main.c:2225:5:main	104	static
