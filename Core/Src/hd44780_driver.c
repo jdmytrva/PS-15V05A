@@ -216,7 +216,7 @@ void LcdOut(char * txt,uint8_t Line)
 
 		txt++;
 		pos_x++;
-		if ((pos_y == 0 )&&(pos_x == 8) &&(Line ==2))
+		if ((pos_y == 0 )&&(pos_x == 16) &&(Line ==2))
 		{
 			lcd_set_xy(0,1);
 			pos_x = 0;

@@ -67,7 +67,7 @@ static void MX_ADC1_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-char Version[] = "PS-15V05A v1.03 ";
+char Version[] = "PS-15V05A v1.06 ";
 
 Key_Pressed_t pressedKey = 0;
 volatile uint32_t  time_sec = 0;
@@ -201,12 +201,12 @@ void MenuPowerSupply(Key_Pressed_t key) //PowerSupply
 
 	if (On_off == 0)
 	{
-		lcd_set_xy(5,1);
+		lcd_set_xy(13,0);
 		PrintToLCD("OFF ");
 	}
 	else
 	{
-		lcd_set_xy(6,1);
+		lcd_set_xy(14,0);
 		PrintToLCD("ON ");
 	}
 
@@ -1255,10 +1255,12 @@ void MenuDIAGNOSTIC(Key_Pressed_t key)
 	{
 		OFF();
 		lcd_set_xy(0,0);
+		PrintToLCD("PA3  -- ADC1_IN3 ");
+		lcd_set_xy(0,1);
 		PrintToLCD("Uout ");
 		PrintToLCD(itoa_koma(U_OUT,2));
 		PrintToLCD("V ");
-		PrintToLCD(itoa((RegularConvData[3])));
+		PrintToLCD(itoa((RegularConvData[2])));
 		PrintToLCD("      ");
 	}
 	if(CountShow1 == 2)
@@ -2085,7 +2087,7 @@ void SysTick_Callback()//1 mc
 		Count10mSecond = 0;
 		//f1 = SysTick->VAL;
 		adc_func();
-		All_OUT_OFF_When_Power_OFF();
+		//All_OUT_OFF_When_Power_OFF();
 		//f2 = SysTick->VAL;
 	}
 
